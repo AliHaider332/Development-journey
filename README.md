@@ -27,11 +27,11 @@ To run this project locally:
 1. **Clone** the repository:
    ```bash
    git clone https://github.com/your-username/daraz-clone.git
-*Open the index.html file in your preferred browser to view the project.*
-##Folder Structure
+2. **Open** the index.html file in your preferred browser to view the project.
+**##Folder Structure**
 ```
 daraz-clone/
 │
 ├── index.html         # Main HTML file
 ├── style.css          # CSS file for styling
-└── README.md          # Project documentation**```
+└── README.md          # Project documentation
