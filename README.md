@@ -29,8 +29,9 @@ To run this project locally:
    git clone https://github.com/your-username/daraz-clone.git
 *Open the index.html file in your preferred browser to view the project.*
 ##Folder Structure
+```
 daraz-clone/
 │
 ├── index.html         # Main HTML file
 ├── style.css          # CSS file for styling
-└── README.md          # Project documentation
+└── README.md          # Project documentation**```
