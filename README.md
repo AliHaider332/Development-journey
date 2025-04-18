@@ -9,6 +9,7 @@ This collection includes beginner-level projects created using **HTML** and **CS
 
 All the projects are organized in separate folders within this single repository:
 
+
 - `/daraz-clone` – A static homepage clone of the popular e-commerce site Daraz.
 - `/my-cv` – A basic online resume built using HTML only.
 - `/quaid-e-azam-bio` – A tribute page for Quaid-e-Azam Muhammad Ali Jinnah.
