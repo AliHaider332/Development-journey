@@ -88,8 +88,8 @@ These projects are part of my learning journey as I work toward becoming a front
 If you'd like to share feedback or want to connect, feel free to reach out:
 
 **Ali Haider**  
-📧 Email: [your-email@example.com]  
-🌐 LinkedIn: [your-linkedin-profile] *(Optional)*
+📧 Email: bhaialihaider332@gmail.com  
+🌐 LinkedIn: https://www.linkedin.com/in/alihaider332/
 
 ---
 
