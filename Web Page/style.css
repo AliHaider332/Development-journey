@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#box{
+    height: 100%;
+    width: 100%;
+    
+    box-sizing: border-box;
+    background-color: rgba(229, 229, 253, 1);
+    border: 10px solid rgba(29, 30, 76, 1);
+    
+}
+#head{
+    margin: 5% 10% 0 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#pic{
+    height: 300px;
+    width: 220px;
+    border: 0px solid rgba(229, 229, 253, 1);
+    border-radius: 80px;
+    margin-bottom: 2px;
+}
+#name{
+    font-size: larger;
+    font-weight: bolder;
+    align-self: flex-end;
+    line-height: 3vh;
+    margin-bottom: 40px;
+    color: rgba(29, 30, 76, 1);
+}
+.position{
+    margin: 5% 10% 0 10%;
+}
+.heading{
+    font-size: 3em;
+    font-weight: bolder;  
+    color: rgba(29, 30, 76, 1); 
+    padding-bottom: 0.5%;
+}
+#para
+{
+    padding-top: 3vh;
+    font-size: 1.5rem;
+    color: rgba(29, 30, 76, 1); 
+    line-height: 5vh;
+    margin-bottom: 6.5%;
+}
+#point{
+    font-size: 1.5rem;
+    color: rgba(29, 30, 76, 1); 
+    line-height: 5vh;
+    margin-bottom: 6.5%;
+}
+#new{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: rgba(29, 30, 76, 1); 
+}
+#link{
+    text-decoration: none;
+}

@@ -1,37 +1,95 @@
-# Daraz Clone
+# 🌐 Frontend Projects Portfolio by Ali Haider
 
-This is a clone of the popular e-commerce website, **Daraz**, created using only **HTML** and **CSS**. The project replicates the basic layout and design elements of the Daraz homepage.
+Welcome to my personal web development project repository! 👨‍💻  
+This collection includes beginner-level projects created using **HTML** and **CSS** only — no frameworks, just pure code as I continue learning frontend development.
 
-## Table of Contents
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Folder Structure](#folder-structure)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+---
 
-## Features
-- **Responsive layout**: Works well on both desktop and mobile devices.
-- **Product listings**: Basic product display and categories.
-- **Navigation bar**: Functional navigation for browsing through the site.
-- **Footer**: Includes essential links and information at the bottom of the page.
+## 📁 Project Structure
 
-## Technologies Used
-- **HTML**: For structuring the content.
-- **CSS**: For styling the layout and design.
+All the projects are organized in separate folders within this single repository:
 
-## Installation
+- `/daraz-clone` – A static homepage clone of the popular e-commerce site Daraz.
+- `/my-cv` – A basic online resume built using HTML only.
+- `/quaid-e-azam-bio` – A tribute page for Quaid-e-Azam Muhammad Ali Jinnah.
 
-To run this project locally:
+---
 
-1. **Clone** the repository:
-   ```bash
-   git clone https://github.com/your-username/daraz-clone.git
-2. **Open** the index.html file in your preferred browser to view the project.
-**##Folder Structure**
-```
-daraz-clone/
-│
-├── index.html         # Main HTML file
-├── style.css          # CSS file for styling
-└── README.md          # Project documentation
+## 🚀 Projects Overview
+---
+
+### 📄 1. Personal CV Website
+
+This is a simple personal portfolio/CV site designed using HTML.
+
+**Sections Included:**
+- Personal Introduction
+- Education and Skills
+- Projects Overview
+- Contact Information
+
+**Folder Name:** `my-cv`  
+**File to open:** `index.html`
+
+**Learning Focus:**
+- Semantic HTML tags (like `<section>`, `<header>`, `<footer>`)
+- Clean, readable structure
+- Simple formatting using HTML
+
+This is a great starting point for anyone wanting to create a digital resume.
+
+---
+### 🛒 2. Daraz Homepage Clone
+
+This is a clone of the Daraz homepage designed to improve my layout and styling skills.
+
+**Features:**
+- Navigation bar with logo and search bar
+- Hero banner and promotional sections
+- Product card layout with price and description
+- Organized using Flexbox and basic CSS positioning
+
+**Folder Name:** `daraz-clone`  
+**File to open:** `index.html`
+
+**Learning Focus:**
+- Understanding box model
+- Creating layout structure
+- Styling headers, buttons, and product cards
+
+
+---
+
+## 💡 Technologies Used
+
+- ✅ HTML5  
+- 🎨 CSS3  
+- 🧠 No JavaScript or frameworks — pure frontend basics
+
+---
+
+## 🎯 Purpose
+
+These projects are part of my learning journey as I work toward becoming a frontend developer. They reflect my current understanding of HTML and CSS and are constantly being improved as I learn new concepts.
+
+---
+
+## 📂 How to Use
+
+1. Clone the repo or download as ZIP  
+2. Open any project folder (e.g., `daraz-clone`)  
+3. Open the `index.html` file in your browser to view the project
+
+---
+
+## 📬 Contact
+
+If you'd like to share feedback or want to connect, feel free to reach out:
+
+**Ali Haider**  
+📧 Email: [your-email@example.com]  
+🌐 LinkedIn: [your-linkedin-profile] *(Optional)*
+
+---
+
+Thanks for visiting! Feel free to give this repo a ⭐ if you like it!
