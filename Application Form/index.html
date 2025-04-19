@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="box">
+        <h1 id="heading">Job Application Form</h1>
+
+
+
+        <section class="portion1">
+            <div class="name">
+                <label for="first">First Name:</label><br>
+                <input type="text"  name="first" class="input">
+            </div>
+            <div class="name">
+                <label for="last">Last Name:</label><br>
+                <input type="text" name="last" class="input">
+            </div>
+        </section>
+        
+
+
+
+        <section class="portion1">
+            <div class="name">
+                <label for="email">E-mail:</label><br>
+                <input type="text"  name="email" class="input">
+            </div>
+            <div class="name">
+                <label for="job"> Job Role:</label>
+                <select name="job" class="input" >
+                    <!-- Development Roles -->
+                    <optgroup label="Development">
+                        <option value="front_end">Front End Developer</option>
+                        <option value="back_end">Back End Developer</option>
+                        <option value="full_stack">Full Stack Developer</option>
+                        <option value="mobile_app">Mobile Application Developer</option>
+                        <option value="game_dev">Game Developer</option>
+                    </optgroup>
+
+                    <!-- Data & AI -->
+                    <optgroup label="Data & AI">
+                        <option value="data_analyst">Data Analyst</option>
+                        <option value="data_scientist">Data Scientist</option>
+                        <option value="ml_engineer">Machine Learning Engineer</option>
+                        <option value="data_engineer">Data Engineer</option>
+                    </optgroup>
+
+                    <!-- DevOps & Cloud -->
+                    <optgroup label="DevOps & Infrastructure">
+                        <option value="devops">DevOps Engineer</option>
+                        <option value="sre">Site Reliability Engineer</option>
+                        <option value="cloud_engineer">Cloud Engineer</option>
+                    </optgroup>
+
+                    <!-- Testing & QA -->
+                    <optgroup label="Testing & QA">
+                        <option value="qa_engineer">QA Engineer</option>
+                        <option value="automation_tester">Automation Tester</option>
+                    </optgroup>
+
+                    <!-- Design -->
+                    <optgroup label="Design">
+                        <option value="ui_ux">UI/UX Designer</option>
+                        <option value="product_designer">Product Designer</option>
+                    </optgroup>
+
+                    <!-- Product & Management -->
+                    <optgroup label="Product & Management">
+                        <option value="product_manager">Product Manager</option>
+                        <option value="project_manager">Project Manager</option>
+                        <option value="scrum_master">Scrum Master</option>
+                    </optgroup>
+
+                    <!-- Security -->
+                    <optgroup label="Security">
+                        <option value="security_engineer">Security Engineer</option>
+                        <option value="ethical_hacker">Ethical Hacker / Pen Tester</option>
+                    </optgroup>
+
+                    <!-- Business & Support -->
+                    <optgroup label="Business & Support">
+                        <option value="tech_support">Technical Support Engineer</option>
+                        <option value="sales_engineer">Sales Engineer</option>
+                        <option value="sys_admin">System Administrator</option>
+                    </optgroup>
+                </select>
+            </div>
+        </section>
+
+
+        <div >
+            <label for="text">Enter Address:</label><br>
+            <textarea name="text" id="textarea" rows="4"></textarea>
+        </div>
+        
+        <section class="portion1">
+            <div class="name">
+                <label for="city">City:</label><br>
+                <input type="text" name="city" class="input">
+            </div>
+            <div class="name">
+                <label for="code">Pin Code:</label><br>
+                <input type="text" name="code" class="input">
+            </div>
+        </section>
+
+
+        <section class="portion1">
+            <div class="name">
+                <label for="date">Joining Date:</label><br>
+                <input type="date" name="date" class="input">
+            </div>
+            <div class="name">
+                <label for="file">Resuma:</label><br>
+                <input type="file" name="file" class="input">
+            </div>
+        </section>
+        <button id="button">Submit</button>
+        
+    </div>
+</body>
+</html>

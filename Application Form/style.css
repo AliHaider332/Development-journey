@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:rgba(169, 169, 169, 1);
+    
+}
+#box{
+    height: 85vh;
+    width: 50vw;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1%;
+    background-color: #ffffff;
+    border-radius: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 0.5%;
+    box-sizing: border-box;
+}
+#heading{
+    font-size: xx-large;
+    font-weight: bolder;
+    text-transform: capitalize;
+
+}
+.portion1 {
+    font-size:large;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.name {
+    width: 48%; /* Adjusted to fit two boxes in one row with some space */
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+}
+
+.input {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: x-small;
+    width: 100%;
+    height: 65%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#textarea{
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    resize: vertical;
+    margin-bottom: 4%;
+}
+
+
+#button{
+  background-color: rgba(255, 0, 0, 1);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  float: right;
+  margin-top: 2%;
+}
+#button:hover{
+    border: 2px solid gray;
+}

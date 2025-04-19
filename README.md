@@ -9,10 +9,10 @@ This collection includes beginner-level projects created using **HTML** and **CS
 
 All the projects are organized in separate folders within this single repository:
 
-
 - `/daraz-clone` – A static homepage clone of the popular e-commerce site Daraz.
 - `/my-cv` – A basic online resume built using HTML only.
 - `/quaid-e-azam-bio` – A tribute page for Quaid-e-Azam Muhammad Ali Jinnah.
+- `/job-application-form` – A simple job application form built using HTML and styled with CSS.
 
 ---
 
@@ -37,9 +37,8 @@ This is a simple personal portfolio/CV site designed using HTML.
 - Clean, readable structure
 - Simple formatting using HTML
 
-This is a great starting point for anyone wanting to create a digital resume.
-
 ---
+
 ### 🛒 2. Daraz Homepage Clone
 
 This is a clone of the Daraz homepage designed to improve my layout and styling skills.
@@ -58,6 +57,24 @@ This is a clone of the Daraz homepage designed to improve my layout and styling 
 - Creating layout structure
 - Styling headers, buttons, and product cards
 
+---
+
+### 📝 3. Job Application Form
+
+This is a clean and user-friendly job application form built using HTML and styled with CSS.
+
+**Features:**
+- Fields for name, email, phone number, position, resume upload, and cover letter
+- Submit button with basic hover styling
+- Responsive and easy-to-read layout
+
+**Folder Name:** `job-application-form`  
+**File to open:** `index.html`
+
+**Learning Focus:**
+- Creating HTML forms
+- Using various input types
+- Styling forms using CSS (padding, margins, layout)
 
 ---
 
@@ -78,7 +95,7 @@ These projects are part of my learning journey as I work toward becoming a front
 ## 📂 How to Use
 
 1. Clone the repo or download as ZIP  
-2. Open any project folder (e.g., `daraz-clone`)  
+2. Open any project folder (e.g., `daraz-clone`, `job-application-form`)  
 3. Open the `index.html` file in your browser to view the project
 
 ---
