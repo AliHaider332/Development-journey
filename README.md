@@ -11,12 +11,13 @@ All the projects are organized in separate folders within this single repository
 
 - `/daraz-clone` – A static homepage clone of the popular e-commerce site Daraz.
 - `/my-cv` – A basic online resume built using HTML only.
-- `/quaid-e-azam-bio` – A tribute page for Quaid-e-Azam Muhammad Ali Jinnah.
+- `/quaid-e-azam-bio` – A blog-style biography page for Quaid-e-Azam Muhammad Ali Jinnah.
 - `/job-application-form` – A simple job application form built using HTML and styled with CSS.
 
 ---
 
 ## 🚀 Projects Overview
+
 ---
 
 ### 📄 1. Personal CV Website
@@ -75,6 +76,25 @@ This is a clean and user-friendly job application form built using HTML and styl
 - Creating HTML forms
 - Using various input types
 - Styling forms using CSS (padding, margins, layout)
+
+---
+
+### 🖋️ 4. Quaid-e-Azam Biography Blog Page
+
+A blog-style web page dedicated to the life and achievements of Quaid-e-Azam Muhammad Ali Jinnah.
+
+**Features:**
+- Blog-style layout with sections for Early Life, Struggle, and Legacy
+- Header with title and image
+- Responsive typography and spacing for readability
+
+**Folder Name:** `quaid-e-azam-bio`  
+**File to open:** `index.html`
+
+**Learning Focus:**
+- Structuring content like a blog
+- Typography and spacing best practices
+- Designing with clarity and flow in mind
 
 ---
 
