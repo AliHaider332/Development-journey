@@ -1,0 +1,63 @@
+body{
+    padding: 0;
+    margin: 0;
+    
+}
+.pics{
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-sizing: border-box;
+}
+.paragraph{
+    width: 100vw;
+    font-size: 200;
+    text-align: center;
+    padding: 1vh 5vw 3vh 5vw;
+    box-sizing: border-box;
+}
+.button {
+    height: 4rem;  
+    width: 18rem;  
+    background-color: #666;
+    border: 0 solid;
+    font-size: 1.3rem;  
+    color: rgba(255, 255, 255, 1);
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 100;
+    font-style: normal;
+    padding: 1rem;  
+    text-align: center;
+    display: inline-block;
+}
+#pic1{
+    background-image: url(1.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#para1{
+    background: rgba(255, 255, 255, 1);
+    color: #666;
+}
+#pic2{
+    background-image: url(2.jpg);
+
+}
+#para2{
+    background-color: #666;
+    color: rgba(255, 255, 255, 1);;
+}
+#pic3{
+    background-image: url(3.jpg);
+
+}
+#pic4{
+    background-image: url(4.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
