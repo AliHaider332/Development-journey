@@ -7,94 +7,131 @@ This collection includes beginner-level projects created using **HTML** and **CS
 
 ## 📁 Project Structure
 
-All the projects are organized in separate folders within this single repository:
+Each project is placed in its own folder within this repository:
 
-- `/daraz-clone` – A static homepage clone of the popular e-commerce site Daraz.
+- `/daraz-clone` – Static homepage clone of the popular e-commerce site Daraz.
 - `/my-cv` – A basic online resume built using HTML only.
-- `/quaid-e-azam-bio` – A blog-style biography page for Quaid-e-Azam Muhammad Ali Jinnah.
-- `/job-application-form` – A simple job application form built using HTML and styled with CSS.
+- `/quaid-e-azam-bio` – Blog-style biography of Quaid-e-Azam Muhammad Ali Jinnah.
+- `/job-application-form` – Simple HTML-based job application form.
+- `/parallax-nature` – A parallax scrolling nature website clone.
+- `/personal-landing-page` – A personal landing page with contact, expertise, and more.
 
 ---
 
 ## 🚀 Projects Overview
 
----
-
 ### 📄 1. Personal CV Website
 
-This is a simple personal portfolio/CV site designed using HTML.
+A clean and simple personal portfolio/CV page created using only HTML.
 
 **Sections Included:**
-- Personal Introduction
-- Education and Skills
-- Projects Overview
-- Contact Information
+- Personal Info  
+- Education & Skills  
+- Projects Summary  
+- Contact Details  
 
-**Folder Name:** `my-cv`  
-**File to open:** `index.html`
+📁 **Folder:** `my-cv`  
+🗂️ **Open File:** `index.html`
 
-**Learning Focus:**
-- Semantic HTML tags (like `<section>`, `<header>`, `<footer>`)
-- Clean, readable structure
-- Simple formatting using HTML
+**Learning Highlights:**
+- Semantic HTML tags (`<section>`, `<footer>`, etc.)
+- Readable code structure
+- Basic formatting and layout
 
 ---
 
 ### 🛒 2. Daraz Homepage Clone
 
-This is a clone of the Daraz homepage designed to improve my layout and styling skills.
+A static clone of Daraz's homepage to practice layout and visual design.
 
 **Features:**
-- Navigation bar with logo and search bar
-- Hero banner and promotional sections
-- Product card layout with price and description
-- Organized using Flexbox and basic CSS positioning
+- Navigation bar with logo and search  
+- Hero banner with promotions  
+- Product cards with image, price, and text  
 
-**Folder Name:** `daraz-clone`  
-**File to open:** `index.html`
+📁 **Folder:** `daraz-clone`  
+🗂️ **Open File:** `index.html`
 
-**Learning Focus:**
-- Understanding box model
-- Creating layout structure
-- Styling headers, buttons, and product cards
+**Learning Highlights:**
+- CSS Flexbox  
+- Box model  
+- Visual hierarchy and spacing
 
 ---
 
 ### 📝 3. Job Application Form
 
-This is a clean and user-friendly job application form built using HTML and styled with CSS.
+A simple and styled HTML form for job applications.
 
 **Features:**
-- Fields for name, email, phone number, position, resume upload, and cover letter
-- Submit button with basic hover styling
-- Responsive and easy-to-read layout
+- Input fields for personal info, resume, and cover letter  
+- Submit button with hover effect  
+- Clean and responsive layout  
 
-**Folder Name:** `job-application-form`  
-**File to open:** `index.html`
+📁 **Folder:** `job-application-form`  
+🗂️ **Open File:** `index.html`
 
-**Learning Focus:**
-- Creating HTML forms
-- Using various input types
-- Styling forms using CSS (padding, margins, layout)
+**Learning Highlights:**
+- HTML form tags and input types  
+- Styling with margins, paddings, and fonts  
+- Visual consistency
 
 ---
 
 ### 🖋️ 4. Quaid-e-Azam Biography Blog Page
 
-A blog-style web page dedicated to the life and achievements of Quaid-e-Azam Muhammad Ali Jinnah.
+A blog-style webpage about the life of Quaid-e-Azam Muhammad Ali Jinnah.
 
 **Features:**
-- Blog-style layout with sections for Early Life, Struggle, and Legacy
-- Header with title and image
-- Responsive typography and spacing for readability
+- Blog-style sections (Early Life, Struggle, Legacy)  
+- Header with title and image  
+- Clean typography and structure  
 
-**Folder Name:** `quaid-e-azam-bio`  
-**File to open:** `index.html`
+📁 **Folder:** `quaid-e-azam-bio`  
+🗂️ **Open File:** `index.html`
 
-**Learning Focus:**
-- Structuring content like a blog
-- Typography and spacing best practices
-- Designing with clarity and flow in mind
+**Learning Highlights:**
+- Content layout for blogs  
+- Typography best practices  
+- Readability and flow
+
+---
+
+### 🌄 5. Parallax Nature Website
+
+A clone of a parallax scrolling website that visually showcases nature scenes.
+
+**Features:**
+- Parallax scrolling effect using background images  
+- Sectioned layout with nature-inspired design  
+- Eye-catching visuals and transitions  
+
+📁 **Folder:** `parallax-nature`  
+🗂️ **Open File:** `index.html`
+
+**Learning Highlights:**
+- CSS background-attachment and parallax scrolling  
+- Visual storytelling through design  
+- Layered content sections
+
+---
+
+### 🧑‍💼 6. Personal Landing Page Clone
+
+A professional landing page showcasing contact info, skills, and expertise.
+
+**Features:**
+- Clean hero section with welcome text  
+- Sections for About Me, Skills, and Contact  
+- Simple and elegant layout  
+
+📁 **Folder:** `personal-landing-page`  
+🗂️ **Open File:** `index.html`
+
+**Learning Highlights:**
+- Creating a personal brand online  
+- Section navigation and layout  
+- Design consistency and responsiveness
 
 ---
 
@@ -115,7 +152,7 @@ These projects are part of my learning journey as I work toward becoming a front
 ## 📂 How to Use
 
 1. Clone the repo or download as ZIP  
-2. Open any project folder (e.g., `daraz-clone`, `job-application-form`)  
+2. Open any project folder (e.g., `daraz-clone`, `parallax-nature`)  
 3. Open the `index.html` file in your browser to view the project
 
 ---
@@ -126,8 +163,8 @@ If you'd like to share feedback or want to connect, feel free to reach out:
 
 **Ali Haider**  
 📧 Email: bhaialihaider332@gmail.com  
-🌐 LinkedIn: https://www.linkedin.com/in/alihaider332/
+🌐 LinkedIn: [alihaider332](https://www.linkedin.com/in/alihaider332/)
 
 ---
 
-Thanks for visiting! Feel free to give this repo a ⭐ if you like it!
+⭐ *Thanks for visiting! Feel free to give this repo a star if you like it!*
