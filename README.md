@@ -134,7 +134,24 @@ A professional landing page showcasing contact info, skills, and expertise.
 - Design consistency and responsiveness
 
 ---
+### 🍽️ 7. Student's Kitchen Website
 
+A responsive home kitchen website named *Student's Kitchen*, showcasing traditional Pakistani flavors.
+
+**Features:**
+- Responsive design for all screen sizes  
+- Hero section with tagline and call-to-action  
+- Menu highlights and About Us section  
+- Contact form for inquiries  
+
+📁 **Folder:** `students-kitchen`  
+🗂️ **Open File:** `index.html`
+
+**Learning Highlights:**
+- Responsive web design using CSS media queries  
+- Layout structuring for mobile and desktop views  
+- Design consistency and branding across pages
+---
 ## 💡 Technologies Used
 
 - ✅ HTML5  
