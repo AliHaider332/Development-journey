@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="box">
+    <input type="text" id="bar" readonly>
+    <div id="container">
+      <button class="b" onclick="clearBar()">C</button>
+      <button class="b" onclick="addValue('1')">1</button>
+      <button class="b" onclick="addValue('2')">2</button>
+      <button class="b" onclick="addValue('3')">3</button>
+      <button class="b" onclick="addValue('+')">+</button>
+      
+      <button class="b" onclick="addValue('4')">4</button>
+      <button class="b" onclick="addValue('5')">5</button>
+      <button class="b" onclick="addValue('6')">6</button>
+      <button class="b" onclick="addValue('-')">-</button>
+      
+      <button class="b" onclick="addValue('7')">7</button>
+      <button class="b" onclick="addValue('8')">8</button>
+      <button class="b" onclick="addValue('9')">9</button>
+      <button class="b" onclick="addValue('*')">*</button>
+      
+      <button class="b" onclick="addValue('/')">/</button>
+      <button class="b" onclick="addValue('0')">0</button>
+      <button class="b" onclick="addValue('.')">.</button>
+      <button class="b" onclick="calculateAnswer()">=</button>
+    </div>
+  </div>
+
+  <script src="abc.js"></script>
+</body>
+</html>
