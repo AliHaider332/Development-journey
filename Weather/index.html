@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Libertinus+Mono&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&family=WDXL+Lubrifont+JP+N&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=visibility" />
+    <script src="https://kit.fontawesome.com/8820236bf1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=compress" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="search">
+                <input type="text" id="user-input" placeholder="Enter City Name">
+                <button id="submit" ><img src="Pics/search.png" alt="search img"></button>
+            </div>
+            
+            <div class="hero-data">
+                <div class="city-name"></div>
+                <img src="" alt="" class="picture">
+                <div class="discription"></div>
+                <div class="temprature"></div>
+                <div class="date">
+                    <div class="day"></div>
+                    <div class="num"></div>
+                </div>
+            </div>
+
+            <div class="feature">
+
+
+                <div class="row">
+                    <div class="c">
+                        <i class="fa-solid fa-temperature-arrow-up"></i>
+                        <div class="amount">
+                            <span>0°C</span>
+                            <span class="option">MaxTem</span>
+                        </div>
+                    </div>
+                    <div class="c">
+                        <i class="fa-solid fa-temperature-arrow-down"></i>
+                            <div class="amount">
+                                <span >0°C</span>
+                                <span class="option">Min Temp</span>
+                            </div>
+                    </div>
+                    
+                </div>
+
+                <div class="row">
+                    <div class="c">
+                        <img src="Pics/humidity.png" alt="humidity icon">
+                        <div class="amount">
+                            <span>0%</span>
+                            <span class="option">Humidity</span>
+                        </div>
+                    </div>
+                    <div class="c">
+                        <img src="Pics/wind.png" alt="wind icon">
+                        <div class="amount">
+                            <span >0Km/hr</span>
+                            <span class="option">Wind Speed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="c">
+                        <span class="material-symbols-outlined">
+                            compress
+                        </span>
+                        <div class="amount">
+                            <span >0 Pa</span>
+                            <span class="option">Pressure</span>
+                        </div>
+                    </div>
+                    <div class="c">
+                        <i class="fa-regular fa-eye"></i>
+                        <div class="amount">
+                            <span>0 m</span>
+                            <span class="option">Visibility</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="time">
+                <div class="sun">Sun Rise: 0-0-0000</div>
+                <div class="sun">Sun Set: 0-0-0000</div>
+            </div>
+
+
+
+
+            <div class="spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+
+
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
