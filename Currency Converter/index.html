@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <main>
+        <div>
+            <div class="container" id="x">
+                <h1>currency converter</h1>
+                <input type="text" placeholder="Enter Amonut" value="1" class="amount">
+                <div class="selectors">
+                    <span class="country">
+                        <img src="" alt="img of flag" id="from-img">
+                        <select  id="from"> </select>
+                    </span>
+                    <span class="country">
+                        <img src="" alt="img of flag" id="to-img">
+                        <select  id="to"></select>
+                    </span>
+                </div>
+                <div class="contant">
+                    <span class="large-contant"></span>
+                    <span class="small-contant"></span>
+                </div>
+                
+                <button>Convert</button>
+            </div>
+            <div class="box">
+                <div class="loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <script src="options.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
