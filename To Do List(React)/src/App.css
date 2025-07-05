@@ -1,0 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.row{
+  width: 60%;
+  align-self: center;
+}
+button{
+  max-width: 80px;
+}

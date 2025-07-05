@@ -1,0 +1,38 @@
+.element {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .row {
+    width: 60%;
+    align-self: center;
+  }
+  
+  .INPUT {
+    width: 70%;
+    height: 30px;
+    padding: 10px;
+    outline: none;
+    border-radius: 3px;
+    border: 0.5px solid gray;
+    box-shadow: 0 0 2px gray;
+  }
+  
+  .date {
+    height: 30px;
+    padding: 10px;
+    outline: none;
+    border-radius: 3px;
+    border: 0.5px solid gray;
+    box-shadow: 0 0 2px gray;
+    cursor: pointer;
+  }
+  
+  button {
+    width: 80px;
+  }
+  
