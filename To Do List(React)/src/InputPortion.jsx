@@ -5,7 +5,7 @@ function InputPortion() {
     <div className={styles.element}>
       <div className="row">
         <div className="col-sm-6">
-          <input type="text" placeholder="Enter Task" className={styles.INPUT}/>
+          <input type="text" placeholder="Enter Task" className={styles.INPUT} onChange={(event)=>{console.log(event.target.value)}}/>
         </div>
         <div className="col-sm-4">
           <input type="date" className={styles.date} />
