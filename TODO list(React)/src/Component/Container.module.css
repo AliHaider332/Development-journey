@@ -1,0 +1,9 @@
+.container{
+    box-shadow:  0 0 10px gray;
+    box-sizing: border-box;
+    margin: 20px ;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
