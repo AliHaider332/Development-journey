@@ -1,0 +1,24 @@
+.postContainer{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+.customCard{
+    margin: 5px 20px;
+}
+.deleteButton {
+    cursor: pointer;
+    
+    visibility: hidden;
+}
+.customCard:hover .deleteButton{
+    visibility: visible;
+}
+.reactionCount{
+    font-size: 12px;
+}
+.tag{
+    margin: 0 2px;
+}
+  
+  
