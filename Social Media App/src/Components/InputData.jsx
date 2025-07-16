@@ -16,7 +16,7 @@ function InputData() {
           id:Date.now(),
           userId: userIdRef.current.value,
           title: titleRef.current.value,
-          description: descriptionRef.current.value,
+          body: descriptionRef.current.value,
           tags: tagsRef.current.value.split(' '),
         });
         userIdRef.current.value = '';

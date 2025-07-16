@@ -15,8 +15,11 @@ function Post() {
           key={index}
         >
           <div className="card-body">
+            {/* ✅ User ID shown at the top */}
+            <p className="text-muted mb-1">User ID: {item.userId}</p>
+
             <span
-              class={`position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger ${styles.deleteButton}`}
+              className={`position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger ${styles.deleteButton}`}
               onClick={() => deletePost(item.id)}
               role="button"
             >
@@ -24,7 +27,7 @@ function Post() {
             </span>
             <h5 className={`card-title ${styles.title}`}>{item.title}</h5>
             <p className={`card-text ${styles.description}`}>
-              {item.description}
+              {item.body}
             </p>
             <div>
               <CiHeart />
@@ -32,7 +35,8 @@ function Post() {
                 {Math.floor(Math.random() * 10)}
               </span>
             </div>
-            
+
+            {/* Tags */}
             {item.tags.map((tag, index) => {
               if (tag.trim() !== '') {
                 return (
