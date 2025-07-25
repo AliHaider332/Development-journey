@@ -1,10 +1,14 @@
-function Loading(){
-    return(
-        <div className="text-center mt-5">
-            <div className="spinner-border text-primary" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
-          </div>
-    )
+// Loading.jsx
+export default function Loading() {
+  return (
+    <div style={{
+      height: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '24px'
+    }}>
+      <p>⏳ Loading...</p>
+    </div>
+  );
 }
-export default Loading;
