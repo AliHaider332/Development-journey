@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home</title>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      h2 {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="gap-3 flex flex-col bg-gray-50">
+    <header class="bg-blue-600 py-5 pl-10 shadow-lg rounded-b-md">
+      <nav class="px-6">
+        <a
+          href="./client"
+          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          >Home</a
+        >
+        <a
+          href="./favourit"
+          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          >Favourit</a
+        >
+        <a
+          href="./reserve"
+          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          >Reserve</a
+        >
+        <a
+          href="./booking"
+          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          >Booking</a
+        >
+        <a
+          href="./server"
+          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          >Add Post</a
+        >
+      </nav>
+    </header>
+
+    <h1 class="text-4xl font-bold text-blue-500 text-center mt-20">
+      Tranding Posts
+    </h1>
+
+    <!-- Form -->
+    <main class="flex flex-wrap gap-6 justify-center w-full">
+      <% if (Data.length === 0) { %>
+      <h1 class="text-4xl font-bold text-blue-400 text-center mt-20">
+        No Place Available
+      </h1>
+      <% } else { %> <% Data.forEach(item => { %>
+      <div
+        class="bg-white shadow-lg rounded-xl p-6 w-80 hover:shadow-2xl transition flex flex-col"
+      >
+        <!-- Image -->
+        <% if (item.link) { %>
+        <img
+          src="<%= item.link %>"
+          alt="<%= item.title %>"
+          class="w-full h-48 object-cover rounded-lg mb-4"
+        />
+        <% } %>
+
+        <!-- Title -->
+        <h2 class="text-xl font-bold text-blue-600 mb-2"><%= item.title %></h2>
+
+        <!-- Location -->
+        <p class="text-gray-700 mb-1">
+          <span class="font-semibold text-blue-500">Location:</span>
+          <%= item.location %>
+        </p>
+
+        <!-- Rent -->
+        <p class="text-gray-700 mb-1">
+          <span class="font-semibold text-blue-500">Rent:</span>
+          PKR <%= item.rent %> / Month
+        </p>
+
+        <!-- Type -->
+        <p class="text-gray-700 mb-1">
+          <span class="font-semibold text-blue-500">Type:</span>
+          <%= item.type %>
+        </p>
+
+        <!-- Description -->
+        <p class="text-gray-600 mt-2 flex-grow"><%= item.description %></p>
+
+        <!-- Button -->
+        <button
+          class="mt-4 w-1/2 bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition"
+        >
+          Book
+        </button>
+      </div>
+      <% }); %> <% } %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Server Side</title>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      h2 {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="gap-3 flex flex-col bg-gray-50">
+    <!-- Header -->
+    <header class="bg-blue-600 py-5 pl-10 shadow-lg rounded-b-md">
+      <nav class="px-6">
+        <a
+          href="./client"
+          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          >Home</a
+        >
+        <a
+          href="./favourit"
+          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          >Favourit</a
+        >
+        <a
+          href="./reserve"
+          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          >Reserve</a
+        >
+        <a
+          href="./booking"
+          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          >Booking</a
+        >
+        <a
+          href="./server"
+          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          >Add Post</a
+        >
+      </nav>
+    </header>
+
+    <!-- Form -->
+    <main class="flex items-center justify-center flex-col gap-5">
+      <a
+        href="./Host-Post-List"
+        class="inline-flex items-center justify-center px-5 py-2.5 text-lg font-semibold tracking-wide text-white rounded-xl shadow-md bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out"
+      >
+        Host Post
+      </a>
+
+      <form
+        action="/client"
+        method="post"
+        class="w-full max-w-lg bg-white shadow-lg rounded-2xl p-8"
+      >
+        <h2 class="text-2xl font-bold text-blue-600 text-center mb-6">
+          Upload Home Rental Data
+        </h2>
+
+        <!-- Title -->
+        <label for="title" class="block text-blue-500 font-medium mb-2"
+          >House Title:</label
+        >
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="House Name"
+          required
+          class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500"
+        />
+
+        <!-- Location -->
+        <label for="location" class="block text-blue-500 font-medium mb-2"
+          >Location:</label
+        >
+        <input
+          type="text"
+          id="location"
+          name="location"
+          placeholder="Enter Place"
+          required
+          class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500"
+        />
+
+        <!-- Rent -->
+        <label for="rent" class="block text-blue-500 font-medium mb-2"
+          >Monthly Rent:</label
+        >
+        <input
+          type="number"
+          id="rent"
+          name="rent"
+          placeholder="Enter amount"
+          class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500"
+        />
+
+        <!-- Rental Type -->
+        <label for="type" class="block text-blue-500 font-medium mb-2"
+          >Rental Type:</label
+        >
+        <select
+          id="type"
+          name="type"
+          required
+          aria-placeholder="Select Space Type"
+          class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="apartment">Apartment</option>
+          <option value="house">House</option>
+          <option value="room">Room</option>
+        </select>
+
+        <!-- Link -->
+        <label for="link" class="block text-blue-500 font-medium mb-2"
+          >Reference Link:</label
+        >
+        <input
+          type="url"
+          id="link"
+          name="link"
+          placeholder="Enter a valid URL (e.g. https://example.com)"
+          class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500"
+        />
+
+        <!-- Description -->
+        <label for="description" class="block text-blue-500 font-medium mb-2"
+          >Description:</label
+        >
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          placeholder="Describe the Place You Have"
+          class="w-full p-3 border border-gray-300 rounded-lg mb-6 focus:ring-2 focus:ring-blue-500"
+        ></textarea>
+
+        <!-- Button -->
+        <button
+          type="submit"
+          class="w-full bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-blue-600 transition"
+        >
+          Submit
+        </button>
+      </form>
+    </main>
+  </body>
+</html>
