@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Client Side</title>
+    <title>Post Detail</title>
     <style>
       body {
         font-family: 'Inter', sans-serif;
@@ -18,40 +18,109 @@
       }
     </style>
   </head>
-  <body class="gap-3 flex flex-col bg-gray-50">
+  <body class="bg-gray-50">
+    <!-- Header -->
     <header class="bg-blue-600 py-5 pl-10 shadow-lg rounded-b-md">
       <nav class="px-6">
         <a
-          href="./client"
-          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          href="/client"
+          class="p-1 px-3 rounded text-white text-[18px] hover:bg-blue-900"
           >Home</a
         >
         <a
-          href="./favourit"
-          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
-          >Favourit</a
+          href="/userList"
+          class="p-1 px-3 rounded text-white text-[18px] hover:bg-blue-900"
+          >Post List</a
         >
         <a
-          href="./reserve"
-          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
-          >Reserve</a
+          href="/favourit"
+          class="p-1 px-3 rounded text-white text-[18px] hover:bg-blue-900"
+          >Favourite</a
         >
         <a
-          href="./booking"
-          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          href="/booking"
+          class="p-1 px-3 rounded text-white text-[18px] hover:bg-blue-900"
           >Booking</a
         >
         <a
-          href="./server"
-          class="p-1 px-3 rounded-[5px] text-white font-serif capitalize text-[18px] hover:bg-blue-900 transition-all duration-500 ease-in-out"
+          href="/server"
+          class="p-1 px-3 rounded text-white text-[18px] hover:bg-blue-900"
           >Add Post</a
         >
       </nav>
     </header>
 
-    <!-- Form -->
-    <h1 class="text-4xl font-bold text-blue-500 text-center mt-20">
-      Your Bookings
-    </h1>
+    <!-- Main Content -->
+    <main class="mt-12 px-4">
+      <h1 class="text-4xl font-bold text-blue-500 text-center">Post Detail</h1>
+
+      <div class="flex justify-center mt-10 px-4">
+        <div
+          class="flex flex-col bg-white rounded-2xl shadow-lg border border-gray-200 max-w-3xl w-full overflow-hidden transition hover:shadow-xl"
+        >
+          <!-- Image -->
+          <div class="w-full">
+            <% if (item.link) { %>
+            <img
+              src="<%= item.link %>"
+              alt="<%= item.title %>"
+              class="w-full h-[350px] md:h-[450px] object-cover object-center"
+            />
+            <% } %>
+          </div>
+
+          <!-- Content -->
+          <div class="w-full p-8 flex flex-col justify-between">
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900 mb-2">
+                <%= item.title %>
+              </h2>
+              <p class="text-gray-600 text-sm flex items-center gap-2">
+                <span class="text-blue-500 text-lg">📍</span>
+                <%= item.location %>
+              </p>
+
+              <div class="mt-5 space-y-2">
+                <p class="text-xl font-semibold text-blue-600">
+                  Rent: Rs. <%= item.rent %> / Month
+                </p>
+                <p class="text-gray-500 text-base">Type: <%= item.type %></p>
+              </div>
+
+              <p
+                class="text-gray-700 mt-6 leading-relaxed text-base md:text-lg"
+              >
+                <%= item.description %>
+              </p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="mt-8 flex gap-3 flex-col md:flex-row">
+              <form action="/booking" method="GET" class="w-full md:w-[140px]">
+                <button
+                  type="submit"
+                  class="w-full bg-blue-500 text-white font-semibold py-3 rounded-xl hover:bg-blue-600 transition-colors shadow-md"
+                >
+                  Book Now
+                </button>
+              </form>
+              <form
+                action="/favourit"
+                method="POST"
+                class="w-full md:w-[160px]"
+              >
+                <input type="hidden" name="id" value="<%= item.id %>" />
+                <button
+                  type="submit"
+                  class="w-full bg-green-500 text-white font-semibold py-3 rounded-xl hover:bg-green-600 transition-colors shadow-md"
+                >
+                  Add to Favourite
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

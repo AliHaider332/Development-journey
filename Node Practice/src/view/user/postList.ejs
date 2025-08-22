@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Client Side</title>
+    <title>Post List</title>
     <style>
       body {
         font-family: 'Inter', sans-serif;
@@ -55,8 +55,10 @@
     </header>
 
     <h1 class="text-4xl font-bold text-blue-500 text-center mt-20">
-      Server Side Post List
+      All User Posts
     </h1>
+
+    <!-- Form -->
     <main class="flex flex-wrap gap-6 justify-center w-full">
       <% if (Data.length === 0) { %>
       <h1 class="text-4xl font-bold text-blue-400 text-center mt-20">
@@ -102,22 +104,19 @@
         </p>
 
         <!-- Button -->
-        <div class="flex justify-between">
-          <a
-            href="./edit-page/<%=item.id%>"
-            class="mt-4 w-[70px] bg-red-300 text-white font-semibold py-2 rounded-lg hover:bg-red-400 transition cursor-pointer text-center"
+        <div class="flex justify-between space-x-2">
+          <button
+            class="mt-4 w-[70px] bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition-colors cursor-pointer"
           >
-            Edit
+            Book
+          </button>
+
+          <a
+            href="/userList/<%= item.id %>"
+            class="mt-4 w-[70px] bg-gray-500 text-white font-semibold py-2 rounded-lg hover:bg-gray-600 transition-colors text-center"
+          >
+            Detail
           </a>
-          <form action="./deletePost/<%= item.id %>" method="post">
-           
-            <button
-              class="mt-4 w-[70px] bg-gray-500 text-white font-semibold py-2 rounded-lg hover:bg-gray-600 transition cursor-pointer text-center"
-            >
-              Delete
-            </button>
-          </form>
-          
         </div>
       </div>
       <% }); %> <% } %>

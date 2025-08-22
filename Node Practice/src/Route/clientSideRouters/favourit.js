@@ -1,10 +1,11 @@
 const express=require('express');
 
 
-const { favouritList } = require('../../controlar/useSideControlar');
+const { favouritList1, favouritList2} = require('../../controlar/useSideControlar');
 
 const favourit=express.Router();
 
-favourit.use('/favourit',favouritList);
+favourit.post('/favourit',favouritList1);
+favourit.get('/favourit',favouritList2);
 
 module.exports={favourit};
