@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('./DataBaseUtil');
 
-const filePath = path.join(__dirname, '../Data', 'DATA.json');
 
 module.exports = class DataHandling {
   constructor(title, location, rent, type, link, description) {
@@ -15,60 +15,45 @@ module.exports = class DataHandling {
   }
 
   save() {
-    DataHandling.fetch((DATA) => {
-      DATA.push(this);
-      fs.writeFile(filePath, JSON.stringify(DATA, null, 2), (error) => {
-        if (error) console.log('❌ Error writing DATA.json:', error);
-        else console.log('✅ Data added to DATA.json');
-      });
-    });
+    const sql = `INSERT INTO data (title, location, rent, type, link, description) VALUES (?, ?, ?, ?, ?, ?)`;
+    const values = [
+      this.title,
+      this.location,
+      this.rent,
+      this.type,
+      this.link,
+      this.description,
+    ];
+
+    db.execute(sql, values)
+      .then(() => console.log('Data inserted successfully'))
+      .catch((err) => console.log('Error inserting data:', err));
   }
 
-  static fetch(callback) {
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
-        if (err.code === 'ENOENT') return callback([]);
-        console.log('❌ Error reading DATA.json:', err);
-        return callback([]);
-      }
-
-      try {
-        const parsedData = JSON.parse(data.toString() || '[]');
-        callback(parsedData);
-      } catch (parseError) {
-        console.log('❌ Error parsing DATA.json:', parseError);
-        callback([]);
-      }
-    });
+  static fetch() {
+    return db.execute('SELECT * FROM data');
   }
 
-  static fetchById(id, callback) {
-    DataHandling.fetch((DATA) => {
-      callback(DATA.find((item) => item.id == id));
-    });
+  static fetchById(id) {
+    return db.execute(`SELECT * FROM data WHERE id=?`, [id]);
   }
 
-  static updateData(Data, callback) {
-    DataHandling.fetch((DATA) => {
-      const index = DATA.findIndex((item) => item.id == Data.id);
-      DATA[index] = Data;
-
-      fs.writeFile(filePath, JSON.stringify(DATA, null, 2), (error) => {
-        if (error) console.log('❌ Error writing DATA.json:', error);
-        else console.log('✅ Data added to DATA.json');
-      });
-
-      callback();
-    });
+  static updateData(Data) {
+    return db.execute(
+      'UPDATE data SET title=?,location=?,rent=?,type=?,link=?,description=? WHERE id=? ',
+      [
+        Data.title,
+        Data.location,
+        Data.rent,
+        Data.type,
+        Data.link,
+        Data.description,
+        Data.id,
+      ]
+    );
   }
-  static deletePost(id, callback) {
-    DataHandling.fetch((DATA) => {
-      DATA = DATA.filter((item) => item.id != id);
-      fs.writeFile(filePath, JSON.stringify(DATA, null, 2), (error) => {
-        if (error) console.log('❌ Error writing DATA.json:', error);
-        else console.log('✅ Data added to DATA.json');
-      });
-      callback();
-    });
+
+  static deletePost(id) {
+    return db.execute(`DELETE FROM data WHERE id=?`, [id]);
   }
 };

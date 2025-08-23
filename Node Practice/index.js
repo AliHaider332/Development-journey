@@ -2,6 +2,7 @@ const express = require('express');
 const { createServer } = require('http');
 const path = require('path');
 
+
 const { welcome } = require('./src/Route/welcome');
 const { serverSide } = require('./src/Route/serverSideRouters/server');
 const { client } = require('./src/Route/clientSideRouters/client');
@@ -16,8 +17,12 @@ const { postList } = require('./src/Route/clientSideRouters/postList');
 const { detailPage } = require('./src/Route/clientSideRouters/detail');
 
 const { editPage } = require('./src/Route/serverSideRouters/editPage');
-const { deleteOption } = require('./src/Route/clientSideRouters/deleteOption');
-const { removeFav } = require('./src/Route/clientSideRouters/removeFavourit,js');
+const {
+  deleteOption,
+} = require('./src/Route/serverSideRouters/deleteOption.js');
+const {
+  removeFav,
+} = require('./src/Route/clientSideRouters/removeFavourit.js');
 const app = express();
 
 // Serve static files
@@ -41,7 +46,7 @@ app.use(postList);
 app.use(detailPage);
 app.use(editPage);
 app.use(deleteOption);
-app.use(removeFav)
+app.use(removeFav);
 app.use(Page404);
 
 // Start server
