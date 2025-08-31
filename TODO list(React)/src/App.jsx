@@ -11,11 +11,9 @@ import NoTask from './Component/NoTask';
 
 
 function App() {
-  const [count, setCount] = useState(0);
+  
 
-  let [tasks, changeTask] = useState([
-   
-  ]);
+  let [tasks, changeTask] = useState([]);
 
   let [inputValue, changeInputValue] = useState('');
   let [inputDate, changeInputDate] = useState('No Date');
