@@ -1,0 +1,223 @@
+
+:root{
+  --bg-1: #2b2b40;
+  --bg-2: #4b3054;
+  --card: rgba(255,255,255,0.06);
+  --accent: #ff6b81;
+  --accent-2: #ff9bb3;
+  --glass: rgba(255,255,255,0.06);
+  --muted: rgba(255,255,255,0.72);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(255,107,129,0.07), transparent 8%),
+              linear-gradient(120deg, var(--bg-1), var(--bg-2));
+  color:var(--muted);
+  overflow-x: hidden;
+}
+
+.wrapper{
+  width:100%;
+  max-width:840px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:16px;
+  padding:28px;
+  box-shadow: 0 10px 30px rgba(12,12,20,0.55);
+  border: 1px solid rgba(255,255,255,0.04);
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:22px;
+  align-items:center;
+}
+
+/* Responsive */
+@media (max-width:880px){
+  .wrapper{ grid-template-columns: 1fr; padding:22px;}
+}
+
+/* Left area: title + form */
+.panel {
+  padding: 18px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.brand {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.logo{
+  width:58px;
+  height:58px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 6px 18px rgba(255,107,129,0.18);
+  color:white;
+  font-weight:700;
+  font-size:22px;
+}
+
+h1 {
+  font-size:20px;
+  color: #fff;
+  letter-spacing:0.2px;
+}
+
+p.lead{
+  color:rgba(255,255,255,0.8);
+  line-height:1.45;
+  font-size:14px;
+  max-width:46ch;
+}
+
+form {
+  margin-top:6px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.fields{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+}
+
+@media (max-width:520px){
+  .fields{ grid-template-columns: 1fr; }
+}
+
+label{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:13px;
+  color: rgba(255,255,255,0.85);
+}
+
+input[type="text"]{
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding:12px 14px;
+  border-radius:10px;
+  color: #fff;
+  outline:none;
+  font-size:15px;
+  transition: transform .12s, box-shadow .12s, border-color .12s;
+  caret-color: var(--accent);
+}
+
+input[type="text"]::placeholder{
+  color: rgba(255,255,255,0.4);
+}
+
+input[type="text"]:focus{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(75,48,84,0.18);
+  border-color: rgba(255,107,129,0.6);
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:6px;
+}
+
+button.primary{
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  font-weight:600;
+  border-radius:12px;
+  cursor:pointer;
+  box-shadow: 0 8px 18px rgba(255,107,129,0.14);
+  transition: transform .12s, box-shadow .12s;
+}
+
+button.primary:hover{ transform:translateY(-3px); box-shadow:0 12px 30px rgba(255,107,129,0.18); }
+
+button.ghost{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.9);
+  padding: 10px 14px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* Right area: visual card */
+.card {
+  height:100%;
+  min-height:260px;
+  border-radius:12px;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.hearts {
+  width:96px;
+  height:96px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background: radial-gradient(circle at 30% 30%, rgba(255,107,129,0.22), transparent 20%),
+              linear-gradient(135deg, rgba(255,107,129,0.16), rgba(255,155,179,0.06));
+  box-shadow: inset 0 -6px 18px rgba(0,0,0,0.25), 0 10px 30px rgba(75,48,84,0.12);
+}
+
+.hearts svg{ width:52px; height:52px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35)); }
+
+.score {
+  text-align:center;
+  color:#fff;
+  font-weight:700;
+  font-size:40px;
+  letter-spacing:1px;
+}
+
+.muted {
+  color: rgba(255,255,255,0.75);
+  font-size:13px;
+  text-align:center;
+}
+
+footer.note{
+  margin-top:6px;
+  font-size:12px;
+  color:rgba(255,255,255,0.6);
+  text-align:center;
+  opacity:0.95;
+}
+
+/* subtle decorative hearts behind card */
+.decor {
+  position:absolute;
+  pointer-events:none;
+  opacity:0.06;
+  top:18px;
+  right:20px;
+  transform: rotate(-18deg);
+  font-size:120px;
+  color: #ff6b81;
+  user-select:none;
+}

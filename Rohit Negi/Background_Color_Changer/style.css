@@ -1,0 +1,43 @@
+body {
+  background-color: rgb(60, 58, 58);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: transform 0.2s;
+  border: 1px solid white;
+  
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Individual button colors */
+#red { background-color: red; }
+#blue { background-color: blue; }
+#green { background-color: green; }
+#yellow { background-color: goldenrod; }
+#purple { background-color: purple; }
+#orange { background-color: orange; }
+#pink { background-color: hotpink; }
+#brown { background-color: brown; }
+#teal { background-color: teal; }
+#black { background-color: black; }
