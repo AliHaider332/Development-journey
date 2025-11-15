@@ -1116,13 +1116,16 @@ function loadProgress() {
 // Enhanced AI response function with better error handling
 async function getAIResponse(message) {
   try {
-    const response = await fetch('http://localhost:3000/api/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message }),
-    });
+    const response = await fetch(
+      'https://development-journey.vercel.app/api/chat',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message }),
+      }
+    );
 
     if (!response.ok) {
       if (response.status === 429) {
