@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Learning Platform</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>JavaScript Learning Platform</h1>
+      <p class="tagline">Master JavaScript concepts revision for interview</p>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchInput" placeholder="Search topics" />
+        </div>
+        <ul class="topics-list" id="topicsList">
+          <!-- Topics will be populated by JavaScript -->
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <div class="topic-header">
+          <h2 class="topic-title-main" id="currentTopicTitle">
+            Select a topic to begin
+          </h2>
+          <a
+            href="#"
+            class="topic-link"
+            id="topicLink"
+            target="_blank"
+            style="display: none"
+          >
+            <i class="fas fa-external-link-alt"></i> View Full Notes
+          </a>
+        </div>
+
+        <div class="questions-container" id="questionsContainer">
+          <div class="welcome-message" id="welcomeMessage">
+            <h3>Welcome to the JavaScript Learning Platform!</h3>
+            <p>
+              Select a topic from the sidebar to view questions and test your
+              knowledge. This platform covers all fundamental JavaScript
+              concepts to help you become a better developer.
+            </p>
+            <div class="feature-cards">
+              <div class="feature-card">
+                <h4>
+                  <i class="fas fa-book" style="color: var(--primary)"></i>
+                  Comprehensive Content
+                </h4>
+                <p>Covering 22+ JavaScript topics with detailed questions</p>
+              </div>
+              <div class="feature-card">
+                <h4>
+                  <i
+                    class="fas fa-mobile-alt"
+                    style="color: var(--secondary)"
+                  ></i>
+                  AI Integrated Q&A
+                </h4>
+                <p>Study ask from AI the Question</p>
+              </div>
+              <div class="feature-card">
+                <h4>
+                  <i class="fas fa-tasks" style="color: #ff9800"></i> Track
+                  Progress
+                </h4>
+                <p>Monitor your learning progress as you study</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-container">
+          <h3 class="progress-title">Your Learning Progress</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-stats">
+            <span id="completedCount">0</span> of
+            <span id="totalCount">0</span> questions answered
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- AI Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+      <div class="chatbot-header">
+        <div class="chatbot-title">
+          <i class="fas fa-robot"></i>
+          <span>JavaScript AI Assistant</span>
+        </div>
+        <button class="chatbot-toggle" id="chatbotToggle">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot-message">
+          <div class="message-avatar">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="message-content">
+            <p>
+              Hello! I'm your JavaScript learning assistant. Ask me anything
+              about JavaScript concepts, interview questions, or code examples!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chatbot-input-container">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="chatbotInput"
+            placeholder="Ask about JavaScript..."
+            maxlength="500"
+          />
+          <button id="sendMessage">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chatbot Toggle Button (when closed) -->
+    <button class="chatbot-launcher" id="chatbotLauncher">
+      <i class="fas fa-robot"></i>
+      <span class="notification-dot"></span>
+    </button>
+
+    <footer>
+      <p>
+        JavaScript Learning Platform &copy; 2025 <br />Created with ❤️ for
+        developers thanks to Coder Army instructor Rohit Negi
+      </p>
+    </footer>
+
+    <script src="app.js">
+      // Data Structures
+    </script>
+  </body>
+</html>

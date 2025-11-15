@@ -4,89 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Love Calculator — UI</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="wrapper" role="main" aria-labelledby="title">
-      <!-- Left panel: form -->
-      <div class="panel">
-        <div class="brand">
-          <div class="logo">❤</div>
-          <div>
-            <h1 id="title">Love Calculator</h1>
-            <p class="lead">
-              Enter two names and see the love percentage — UI only. Hook up
-              your logic later (JS or server).
-            </p>
-          </div>
-        </div>
+    <div class="container">
+      <h2>💞 Love Calculator 💞</h2>
+      <input type="text" id="name1" placeholder="Enter your name" required />
+      <input
+        type="text"
+        id="name2"
+        placeholder="Enter Partner's name"
+        required
+      />
+      <button>Calculate</button>
 
-        <form method="get" action="#" aria-label="Love calculator form">
-          <div class="fields">
-            <label>
-              Person One
-              <input
-                type="text"
-                name="name1"
-                placeholder="e.g. Ali"
-                autocomplete="off"
-              />
-            </label>
+      <!-- Loader -->
+      <div class="loader" id="loader"></div>
 
-            <label>
-              Person Two
-              <input
-                type="text"
-                name="name2"
-                placeholder="e.g. Aisha"
-                autocomplete="off"
-              />
-            </label>
-          </div>
-
-          <div class="actions" aria-hidden="false">
-            <button type="submit" class="primary">Calculate ❤</button>
-            <button type="reset" class="ghost">Reset</button>
-          </div>
-
-          <p class="muted" style="margin-top: 6px">
-            This is only the UI — no calculation is performed. Add JavaScript or
-            a backend to compute the result.
-          </p>
-        </form>
-
-        <p class="note" style="margin-top: auto">
-          Tip: Use playful responses when you wire in the logic — keep it fun
-          and respectful.
-        </p>
-      </div>
-
-      <!-- Right panel: visual result card -->
-      <div class="card" aria-hidden="true">
-        <div class="hearts" aria-hidden="true">
-          <!-- simple heart SVG -->
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M12 21s-7.5-4.866-9.5-8.5C0.2 8.4 5 4 8.5 6.5 10.2 7.9 12 10 12 10s1.8-2.1 3.5-3.5C19 4 23.8 8.4 21.5 12.5 19.5 16.1 12 21 12 21z"
-              fill="white"
-              opacity="0.92"
-            />
-          </svg>
-        </div>
-
-        <div class="score">— ❤ —</div>
-        <div class="muted">
-          Result preview will show here once you add the calculation logic.
-        </div>
-      </div>
+      <div id="result"></div>
     </div>
 
-    <!-- decorative faint heart behind -->
-    <div class="decor" aria-hidden="true">❤</div>
+    <script src="./app.js"></script>
   </body>
 </html>
