@@ -130,7 +130,7 @@ const NOTES = [
   },
   {
     title: 'JavaScript Objects (In-Depth)',
-    link: 'https://www.notion.so/Lecture-07-Array-in-javascript-2803a78e0e228002bcb2dffd112b7c4c',
+    link: 'https://www.notion.so/Lecture-08-Objects-in-Javascript-2833a78e0e2280109358ee39b2b35e4f',
     questions: [
       'What are objects in JavaScript and how are they created?',
       'Explain the difference between dot notation and bracket notation.',
