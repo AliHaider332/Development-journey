@@ -1,0 +1,3037 @@
+// const NOTES = [
+//   {
+//     title: 'How the Internet and Websites Work',
+//     link: 'https://www.notion.so/Web-Development-Course-25b3a78e0e2280919c1ed15f0878fa15',
+//     questions: [
+//       'What happens when you type a URL in the browser?',
+//       'Explain the difference between HTTP and HTTPS.',
+//       'What is DNS and how does it work?',
+//       'Describe the client-server model.',
+//       'What are the main components of a web page?',
+//       'Explain the role of browsers in web development.',
+//       'What is a web server and how does it work?',
+//       'Describe the request-response cycle.',
+//       'What are cookies and how are they used?',
+//       'Explain the concept of web hosting.',
+//     ],
+//   },
+//   {
+//     title: 'Introduction to JavaScript & How JS Executes',
+//     link: 'https://www.notion.so/Introduction-to-Javascript-2763a78e0e22809db99af584c1c5c6ec',
+//     questions: [
+//       'What is JavaScript and what is it used for?',
+//       'Explain how JavaScript code is executed in a browser.',
+//       'What is the difference between JavaScript and Java?',
+//       'What is a JavaScript engine? Name a few.',
+//       'Explain the role of the JavaScript runtime environment.',
+//       'What are the different ways to include JavaScript in HTML?',
+//       'What is the difference between client-side and server-side JavaScript?',
+//       'Explain the concept of Just-In-Time (JIT) compilation.',
+//       'What are the basic data types in JavaScript?',
+//       'How does JavaScript handle asynchronous operations?',
+//     ],
+//   },
+//   {
+//     title: 'JavaScript Variables & Data Types (var, let, const, Mutable)',
+//     link: 'https://www.notion.so/Lecture-02-Data-Type-2773a78e0e228042ba55df0265e78c6b',
+//     questions: [
+//       'What are the differences between var, let, and const?',
+//       'Explain variable hoisting in JavaScript.',
+//       'What are the primitive data types in JavaScript?',
+//       'What is the difference between primitive and reference types?',
+//       'Explain the concept of mutability in JavaScript.',
+//       'How does JavaScript handle type coercion?',
+//       'What is the typeof operator and how is it used?',
+//       'Explain the concept of variable scope in JavaScript.',
+//       'What is the Temporal Dead Zone?',
+//       'How do you check if a variable is an array?',
+//     ],
+//   },
+//   {
+//     title: 'JavaScript Memory Management: Stack vs Heap',
+//     link: 'https://www.notion.so/Lecture-03-V8-Engine-Memory-Allocation-27a3a78e0e228017963adec0533f0d78',
+//     questions: [
+//       'Explain the difference between stack and heap memory.',
+//       'How does JavaScript manage memory allocation?',
+//       'What is garbage collection in JavaScript?',
+//       'Explain memory leaks and how to prevent them.',
+//       'What is the mark-and-sweep algorithm?',
+//       'How are primitive and reference types stored in memory?',
+//       'What is the call stack and how does it work?',
+//       'Explain the concept of memory lifecycle in programming.',
+//       'What are the common causes of memory leaks in JavaScript?',
+//       'How does the V8 engine optimize memory usage?',
+//     ],
+//   },
+//   {
+//     title: 'Conditionals, Loops & Operators in JavaScript',
+//     link: 'https://www.notion.so/Lecture-04-27b3a78e0e228099a515cf3dd04dd9ac?source=copy_link',
+//     questions: [
+//       'What are the different types of conditional statements in JavaScript?',
+//       'Explain the difference between == and === operators.',
+//       'What are the different types of loops in JavaScript?',
+//       'How does the ternary operator work?',
+//       'What is short-circuit evaluation?',
+//       'Explain the difference between for...in and for...of loops.',
+//       'What are logical operators in JavaScript?',
+//       'How does the switch statement work?',
+//       'What is the difference between break and continue statements?',
+//       'Explain the concept of truthy and falsy values.',
+//     ],
+//   },
+//   {
+//     title: 'JavaScript Numbers & Math Object (Random Number Generation)',
+//     link: 'https://www.notion.so/Lecture-05-Number-Math-and-String-27d3a78e0e2280c8a606ceb93c369d1b',
+//     questions: [
+//       'How does JavaScript handle numbers?',
+//       'What is the Math object and what are its common methods?',
+//       'How do you generate random numbers in JavaScript?',
+//       'Explain the difference between parseInt() and parseFloat().',
+//       'What is NaN and how do you check for it?',
+//       'How do you round numbers in JavaScript?',
+//       'What is the maximum safe integer in JavaScript?',
+//       'Explain the concept of floating point precision issues.',
+//       'How do you convert numbers to different bases?',
+//       'What is the difference between Math.floor() and Math.ceil()?',
+//     ],
+//   },
+//   {
+//     title: 'JavaScript Strings & Dates (In-Depth)',
+//     link: 'https://www.notion.so/Lecture-06-String-and-Date-27e3a78e0e22803ca796f1eef30bc86b',
+//     questions: [
+//       'What are the different ways to create strings in JavaScript?',
+//       'Explain common string methods in JavaScript.',
+//       'How do you work with template literals?',
+//       'What is the Date object and how is it used?',
+//       'How do you format dates in JavaScript?',
+//       'Explain the difference between getTime() and valueOf() for dates.',
+//       'How do you compare two dates?',
+//       'What is the Internationalization API for dates?',
+//       'How do you extract parts of a string?',
+//       'What are regular expressions and how are they used with strings?',
+//     ],
+//   },
+//   {
+//     title: 'JavaScript Arrays (In-Depth)',
+//     link: 'https://www.notion.so/Lecture-07-Array-in-javascript-2803a78e0e228002bcb2dffd112b7c4c',
+//     questions: [
+//       'What are arrays in JavaScript and how are they created?',
+//       'Explain common array methods (push, pop, shift, unshift).',
+//       'What is the difference between slice() and splice()?',
+//       'How do you iterate over arrays?',
+//       'Explain the map(), filter(), and reduce() methods.',
+//       'What are sparse arrays?',
+//       'How do you check if an object is an array?',
+//       'What is the difference between forEach() and map()?',
+//       'How do you flatten a nested array?',
+//       'What are array-like objects?',
+//     ],
+//   },
+//   {
+//     title: 'JavaScript Objects (In-Depth)',
+//     link: 'https://www.notion.so/Lecture-08-Objects-in-Javascript-2833a78e0e2280109358ee39b2b35e4f',
+//     questions: [
+//       'What are objects in JavaScript and how are they created?',
+//       'Explain the difference between dot notation and bracket notation.',
+//       'How do you iterate over object properties?',
+//       'What is object destructuring?',
+//       'Explain the concept of object references.',
+//       'How do you clone an object?',
+//       'What are getters and setters in objects?',
+//       'Explain the Object.keys(), Object.values(), and Object.entries() methods.',
+//       'What is the difference between shallow copy and deep copy?',
+//       'How does property enumeration work in JavaScript?',
+//     ],
+//   },
+//   {
+//     title: 'JavaScript Functions (In-Depth)',
+//     link: 'https://www.notion.so/Lecture-09-Function-in-javascript-2843a78e0e2280aeb47fd280307b1a38',
+//     questions: [
+//       'What are the different ways to define functions in JavaScript?',
+//       'Explain the difference between function declarations and function expressions.',
+//       'What are arrow functions and how do they differ from regular functions?',
+//       'Explain the concept of higher-order functions.',
+//       'What are callback functions?',
+//       'How do default parameters work in functions?',
+//       'What is the arguments object?',
+//       'Explain the concept of function currying.',
+//       'What are IIFEs and why are they used?',
+//       'How does the return statement work in functions?',
+//     ],
+//   },
+//   {
+//     title: 'How JavaScript Code Executes & Hoisting',
+//     link: 'https://www.notion.so/Lecture-10-JS-Code-Execution-2853a78e0e2280a8a3c2e21a712ebd43',
+//     questions: [
+//       'Explain the JavaScript execution context.',
+//       'What is hoisting and how does it work?',
+//       'Explain the difference between function and variable hoisting.',
+//       'What is the call stack?',
+//       'How does JavaScript handle synchronous and asynchronous code?',
+//       'Explain the creation and execution phases in JavaScript.',
+//       'What is the Temporal Dead Zone?',
+//       'How are let and const variables hoisted?',
+//       'What is the scope chain?',
+//       'Explain the concept of lexical scoping.',
+//     ],
+//   },
+//   {
+//     title: 'Closures, Scope & Higher-Order Functions',
+//     link: 'https://www.notion.so/Lecture-11-Scope-and-Closures-2873a78e0e228059a849d06ad3267ed9',
+//     questions: [
+//       'What is a closure in JavaScript?',
+//       'Explain lexical scoping.',
+//       'How are closures used in practical applications?',
+//       'What is the scope chain?',
+//       'Explain the concept of higher-order functions.',
+//       'How do closures help with data encapsulation?',
+//       'What is a common mistake with closures in loops?',
+//       'How do closures relate to memory management?',
+//       'What is the module pattern and how does it use closures?',
+//       'Explain the difference between global and local scope.',
+//     ],
+//   },
+//   {
+//     title: 'Map, Filter, Reduce, Set & Map in JavaScript',
+//     link: 'https://www.notion.so/Lecture-12-filter-set-reducer-map-and-set-2873a78e0e2280e192bfc88fa8d0bea7',
+//     questions: [
+//       'Explain the map() method and how it works.',
+//       'What is the filter() method and when would you use it?',
+//       'How does the reduce() method work?',
+//       'What is the difference between forEach() and map()?',
+//       'Explain the Set object and its use cases.',
+//       'What is the Map object and how is it different from regular objects?',
+//       'How do you convert an array to a Set and vice versa?',
+//       'What are the advantages of using Map over objects?',
+//       'How do you chain array methods?',
+//       'Explain the concept of immutability in relation to these methods.',
+//     ],
+//   },
+//   {
+//     title: 'DOM Manipulation in JavaScript (Document Object Model)',
+//     link: 'https://www.notion.so/Lecture-13-Introduction-to-DOM-28b3a78e0e2280be9dbbf32ae46773b6',
+//     questions: [
+//       'What is the DOM?',
+//       'Explain the difference between the DOM and HTML.',
+//       'How do you select elements in the DOM?',
+//       'What is the difference between getElementById and querySelector?',
+//       'How do you create and add new elements to the DOM?',
+//       'Explain the concept of event delegation.',
+//       'What is the difference between innerHTML and textContent?',
+//       'How do you traverse the DOM tree?',
+//       'What is the difference between attributes and properties?',
+//       'How do you remove elements from the DOM?',
+//     ],
+//   },
+//   {
+//     title: 'CRUD Operations in the DOM',
+//     link: 'https://www.notion.so/Lecture-14-DOM-Manipulation-28c3a78e0e22802482ffcc9e423d3db0',
+//     questions: [
+//       'How do you create elements in the DOM?',
+//       'Explain different methods to add elements to the DOM.',
+//       'How do you update element content and attributes?',
+//       'What are the different ways to remove elements from the DOM?',
+//       'How do you replace elements in the DOM?',
+//       'Explain the difference between append() and appendChild().',
+//       'How do you clone elements in the DOM?',
+//       'What is the DocumentFragment and why is it useful?',
+//       'How do you handle dynamic content creation?',
+//       'What are the performance considerations for DOM manipulation?',
+//     ],
+//   },
+//   {
+//     title: 'Events & Event Handling in JavaScript',
+//     link: 'https://www.notion.so/Lecture-15-Event-Listener-and-Handler-28e3a78e0e2280b6a720c5387d057dae',
+//     questions: [
+//       'What is event propagation?',
+//       'Explain the difference between event capturing and bubbling.',
+//       'How do you add and remove event listeners?',
+//       'What is the event object and what information does it contain?',
+//       'How do you prevent default behavior in events?',
+//       'What is event delegation and why is it useful?',
+//       'How do you create custom events?',
+//       'Explain the different types of mouse and keyboard events.',
+//       'What is the difference between target and currentTarget?',
+//       'How do you handle asynchronous events?',
+//     ],
+//   },
+//   {
+//     title: 'Event Loop in JavaScript (Why JS is Single-Threaded)',
+//     link: 'https://www.notion.so/Lecture-17-Event-Loop-in-JS-2943a78e0e22801582e6c6f4a83ecd9f',
+//     questions: [
+//       'What is the event loop in JavaScript?',
+//       'Explain the call stack, callback queue, and microtask queue.',
+//       'Why is JavaScript single-threaded?',
+//       'How does JavaScript handle asynchronous operations?',
+//       'What is the difference between microtasks and macrotasks?',
+//       'Explain the concept of non-blocking I/O.',
+//       'How does setTimeout() work with the event loop?',
+//       'What is the role of Web APIs in the browser?',
+//       'How does Promise resolution relate to the event loop?',
+//       'What are the potential issues with blocking the event loop?',
+//     ],
+//   },
+//   {
+//     title: 'Callback Hell & Async Programming',
+//     link: 'https://www.notion.so/Lecture-17-Event-Loop-in-JS-2943a78e0e22801582e6c6f4a83ecd9f',
+//     questions: [
+//       'What is callback hell?',
+//       'How does callback hell affect code readability and maintenance?',
+//       'What are the alternatives to callback hell?',
+//       'Explain the concept of error handling in callbacks.',
+//       'How do you handle multiple asynchronous operations with callbacks?',
+//       'What is the "Pyramid of Doom" in JavaScript?',
+//       'How do promises help avoid callback hell?',
+//       'How does async/await help with callback hell?',
+//       'What are the best practices for working with callbacks?',
+//       'Explain the concept of inversion of control with callbacks.',
+//     ],
+//   },
+//   {
+//     title: 'Promises in JavaScript | JSON vs JS Object',
+//     link: 'https://www.notion.so/Lecture-19-Promise-in-JS-2993a78e0e228091a900ff5fa583094a',
+//     questions: [
+//       'What is a Promise in JavaScript?',
+//       'Explain the states of a Promise.',
+//       'How do you create and consume Promises?',
+//       'What is the difference between Promise.all() and Promise.race()?',
+//       'How do you handle errors in Promises?',
+//       'What is the difference between JSON and JavaScript objects?',
+//       'How do you convert between JSON and JavaScript objects?',
+//       'Explain Promise chaining.',
+//       'What are async functions and how do they relate to Promises?',
+//       'How do you cancel a Promise?',
+//     ],
+//   },
+//   {
+//     title: 'Async/Await in JavaScript',
+//     link: 'https://www.notion.so/Lecture-20-Async-Await-in-Javascript-2a73a78e0e228063b899c85279911c35',
+//     questions: [
+//       'What are async functions?',
+//       'How does the await keyword work?',
+//       'What is the difference between async/await and Promises?',
+//       'How do you handle errors in async/await?',
+//       'Can you use await outside of an async function?',
+//       'How does async/await work with parallel operations?',
+//       'What is the return type of an async function?',
+//       'How do you convert existing Promise-based code to async/await?',
+//       'What are the performance implications of async/await?',
+//       'How do you handle multiple async operations with async/await?',
+//     ],
+//   },
+//   {
+//     title: 'Prototypes & Classes in JavaScript',
+//     link: 'https://www.notion.so/Lecture-21-Prototype-and-Class-in-javascript-2a73a78e0e2280f9a76ad7141e3bd3b6',
+//     questions: [
+//       'What is prototypal inheritance?',
+//       'Explain the prototype chain.',
+//       'What is the difference between __proto__ and prototype?',
+//       'How do classes work in JavaScript?',
+//       'What is the difference between classical and prototypal inheritance?',
+//       'How do you create objects using constructor functions?',
+//       'Explain the super() keyword in classes.',
+//       'What are static methods in classes?',
+//       'How do you implement inheritance using classes?',
+//       'What is the Object.create() method?',
+//     ],
+//   },
+//   {
+//     title: 'JavaScript "this" Keyword | call(), apply(), bind()',
+//     link: 'https://www.notion.so/Lecture-22-This-Keyword-in-javascript-2aa3a78e0e22802aa703dfcdce606b37',
+//     questions: [
+//       'What is the "this" keyword in JavaScript?',
+//       'How is the value of "this" determined?',
+//       'Explain the different ways "this" can be bound.',
+//       'What is the difference between call(), apply(), and bind()?',
+//       'How does "this" work in arrow functions?',
+//       'What is the value of "this" in global scope?',
+//       'How does "this" work in event handlers?',
+//       'Explain the concept of method borrowing.',
+//       'How do you fix "this" context issues?',
+//       'What is the new binding for "this"?',
+//     ],
+//   },
+// ];
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Learning Platform</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>JavaScript Learning Platform</h1>
+      <p class="tagline">Master JavaScript concepts revision for interview</p>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchInput" placeholder="Search topics" />
+        </div>
+        <ul class="topics-list" id="topicsList">
+          <!-- Topics will be populated by JavaScript -->
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <div class="topic-header">
+          <h2 class="topic-title-main" id="currentTopicTitle">
+            Select a topic to begin
+          </h2>
+          <a
+            href="#"
+            class="topic-link"
+            id="topicLink"
+            target="_blank"
+            style="display: none"
+          >
+            <i class="fas fa-external-link-alt"></i> View Full Notes
+          </a>
+        </div>
+
+        <div class="questions-container" id="questionsContainer">
+          <div class="welcome-message" id="welcomeMessage">
+            <h3>Welcome to the JavaScript Learning Platform!</h3>
+            <p>
+              Select a topic from the sidebar to view questions and test your
+              knowledge. This platform covers all fundamental JavaScript
+              concepts to help you become a better developer.
+            </p>
+            <div class="feature-cards">
+              <div class="feature-card">
+                <h4>
+                  <i class="fas fa-book" style="color: var(--primary)"></i>
+                  Comprehensive Content
+                </h4>
+                <p>Covering 22+ JavaScript topics with detailed questions</p>
+              </div>
+              <div class="feature-card">
+                <h4>
+                  <i
+                    class="fas fa-mobile-alt"
+                    style="color: var(--secondary)"
+                  ></i>
+                  AI Integrated Q&A
+                </h4>
+                <p>Study ask from AI the Question</p>
+              </div>
+              <div class="feature-card">
+                <h4>
+                  <i class="fas fa-tasks" style="color: #ff9800"></i> Track
+                  Progress
+                </h4>
+                <p>Monitor your learning progress as you study</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-container">
+          <h3 class="progress-title">Your Learning Progress</h3>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-stats">
+            <span id="completedCount">0</span> of
+            <span id="totalCount">0</span> questions answered
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- AI Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+      <div class="chatbot-header">
+        <div class="chatbot-title">
+          <i class="fas fa-robot"></i>
+          <span>JavaScript AI Assistant</span>
+        </div>
+        <button class="chatbot-toggle" id="chatbotToggle">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot-message">
+          <div class="message-avatar">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="message-content">
+            <p>
+              Hello! I'm your JavaScript learning assistant. Ask me anything
+              about JavaScript concepts, interview questions, or code examples!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chatbot-input-container">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="chatbotInput"
+            placeholder="Ask about JavaScript..."
+            maxlength="500"
+          />
+          <button id="sendMessage">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chatbot Toggle Button (when closed) -->
+    <button class="chatbot-launcher" id="chatbotLauncher">
+      <i class="fas fa-robot"></i>
+      <span class="notification-dot"></span>
+    </button>
+
+    <footer>
+      <p>
+        JavaScript Learning Platform &copy; 2025 <br />Created with ❤️ for
+        developers thanks to Coder Army instructor Rohit Negi
+      </p>
+    </footer>
+
+    <script src="app.js">
+      // Data Structures
+    </script>
+  </body>
+</html>
+ /* CSS Variables */
+:root {
+  --primary: #3498db;
+  --secondary: #2ecc71;
+  --accent: #e74c3c;
+  --dark: #2c3e50;
+  --light: #ecf0f1;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --radius: 12px;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: var(--dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-weight: 400;
+}
+
+/* Header Styles */
+header {
+  background: var(--dark);
+  color: white;
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  max-width: 1400px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  gap: 2.5rem;
+}
+
+.sidebar {
+  flex: 0 0 320px;
+  background: white;
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+  height: fit-content;
+  position: sticky;
+  top: 2.5rem;
+}
+
+.main-content {
+  flex: 1;
+  background: white;
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Search Box */
+.search-box {
+  position: relative;
+  margin-bottom: 1.8rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 1px solid #e1e5e9;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: var(--transition);
+  font-weight: 400;
+  background: #f8fafc;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  background: white;
+}
+
+.search-box i {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+}
+
+/* Topics List */
+.topics-list {
+  list-style: none;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.topics-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.topics-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.topics-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.topics-list::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.topic-item {
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid transparent;
+  font-weight: 500;
+}
+
+.topic-item:hover {
+  background: #f0f7ff;
+  transform: translateX(5px);
+  border-color: #e1e5e9;
+}
+
+.topic-item.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.topic-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.topic-title {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+/* Topic Header */
+.topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.topic-title-main {
+  font-size: 2rem;
+  color: var(--dark);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.topic-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--primary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+.topic-link:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Questions Container */
+.questions-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.8rem;
+}
+
+.question-card {
+  background: #f8fafc;
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  border-left: 4px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  animation: cardSlideIn 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes cardSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.question-card:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.question-card:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+.question-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.question-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.question-card:hover::before {
+  transform: scaleX(1);
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.question-text {
+  font-weight: 500;
+  color: var(--dark);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-right: 1rem;
+}
+
+.question-status {
+  flex-shrink: 0;
+}
+
+.status-icon {
+  color: #ddd;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.status-icon.completed {
+  color: var(--secondary);
+}
+
+.answer-btn {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 0.7rem 1.2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+
+.answer-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.answer-content {
+  margin-top: 1.2rem;
+  padding: 1.2rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 3px solid var(--secondary);
+  display: none;
+  animation: slideDown 0.3s ease;
+  line-height: 1.6;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.answer-placeholder {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.answer-placeholder i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
+.answer-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mark-understood {
+  background: var(--secondary);
+  color: white;
+}
+
+.mark-understood:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+
+.ask-ai {
+  background: var(--primary);
+  color: white;
+}
+
+.ask-ai:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* Progress Container */
+.progress-container {
+  margin-top: 2.5rem;
+  background: #f8fafc;
+  padding: 1.8rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e1e5e9;
+}
+
+.progress-title {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.progress-bar {
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  width: 0%;
+  transition: width 1s ease;
+  border-radius: 6px;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Welcome Message */
+.welcome-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
+  border-radius: var(--radius);
+  border: 1px solid #e1e5e9;
+}
+
+.welcome-message h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.welcome-message p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.feature-cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 1.8rem;
+  border-radius: var(--radius);
+  flex: 1;
+  min-width: 220px;
+  max-width: 280px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  border-top: 4px solid var(--primary);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--dark);
+  color: white;
+  margin-top: 3rem;
+  font-weight: 400;
+}
+
+/* Chatbot Styles */
+.chatbot-widget {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 380px;
+  height: 600px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transform: translateY(20px) scale(0.95);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.chatbot-widget.active {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, var(--primary), #2980b9);
+  color: white;
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.chatbot-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.chatbot-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chatbot-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Messages Container - FIXED SCROLLING */
+.chatbot-messages {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  max-height: calc(600px - 140px);
+  scroll-behavior: smooth;
+  /* Ensure proper scrolling */
+  min-height: 0; /* Important for flex children */
+}
+
+.chatbot-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chatbot-messages::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  margin: 5px 0;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary), #2980b9);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--primary-dark), #1c6ea4);
+}
+
+/* Message Styles */
+.message {
+  display: flex;
+  gap: 0.8rem;
+  max-width: 85%;
+  animation: messageSlide 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+@keyframes messageSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.bot-message {
+  align-self: flex-start;
+}
+
+.user-message {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.bot-message .message-avatar {
+  background: linear-gradient(135deg, var(--primary), #2980b9);
+  color: white;
+}
+
+.user-message .message-avatar {
+  background: linear-gradient(135deg, var(--secondary), #27ae60);
+  color: white;
+}
+
+.message-content {
+  background: white;
+  padding: 1.2rem 1.4rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  line-height: 1.5;
+  position: relative;
+  min-width: 120px;
+  max-width: 100%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.bot-message .message-content {
+  border-bottom-left-radius: 6px;
+  background: linear-gradient(135deg, #ffffff, #fafbfc);
+  border-left: 4px solid var(--primary);
+  border: 1px solid rgba(52, 152, 219, 0.1);
+}
+
+.user-message .message-content {
+  border-bottom-right-radius: 6px;
+  background: linear-gradient(135deg, var(--primary), #2980b9);
+  color: white;
+  border-right: 4px solid var(--secondary);
+  border: 1px solid rgba(52, 152, 219, 0.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.message-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+/* AI Response Container - FIXED SCROLLING */
+.ai-response {
+  max-height: none; /* Remove height restriction */
+  overflow-y: visible; /* Allow natural flow */
+  padding-right: 8px;
+  word-break: break-word;
+  scroll-behavior: smooth;
+}
+
+/* Code Blocks */
+.code-block {
+  background: linear-gradient(135deg, #1e1e1e, #2d2d2d);
+  border-radius: 12px;
+  margin: 1rem 0;
+  overflow: hidden;
+  border: 1px solid #404040;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.code-header {
+  background: linear-gradient(135deg, #2d2d2d, #363636);
+  color: #ccc;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.8rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  border-bottom: 1px solid #404040;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 1.2rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  background: transparent;
+}
+
+.code-block pre code {
+  font-size: 0.8rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  word-break: break-all;
+  white-space: pre-wrap;
+  background: transparent !important;
+}
+
+/* Chatbot Input */
+.chatbot-input-container {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #ffffff, #fafbfc);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  position: relative;
+}
+
+#chatbotInput {
+  flex: 1;
+  padding: 1.2rem 1.5rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  resize: none;
+  min-height: 55px;
+  max-height: 120px;
+  line-height: 1.5;
+  font-family: inherit;
+  word-break: break-word;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#chatbotInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: linear-gradient(135deg, #ffffff, #fefefe);
+  box-shadow: inset 0 2px 12px rgba(52, 152, 219, 0.1),
+    0 4px 20px rgba(52, 152, 219, 0.15), 0 0 0 4px rgba(52, 152, 219, 0.1);
+  transform: translateY(-1px);
+}
+
+#sendMessage {
+  background: linear-gradient(135deg, var(--primary), #2980b9);
+  color: white;
+  border: none;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4),
+    0 4px 12px rgba(52, 152, 219, 0.3);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+#sendMessage:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 30px rgba(52, 152, 219, 0.5),
+    0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Chatbot Launcher */
+.chatbot-launcher {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary), #2980b9);
+  color: white;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 35px rgba(52, 152, 219, 0.5),
+    0 8px 25px rgba(52, 152, 219, 0.4);
+  z-index: 999;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.chatbot-launcher:hover {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 18px 45px rgba(52, 152, 219, 0.6),
+    0 12px 35px rgba(52, 152, 219, 0.5);
+}
+
+.chatbot-launcher i {
+  font-size: 1.8rem;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+  }
+
+  .questions-container {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .topic-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .container {
+    margin: 1.5rem auto;
+    gap: 1.5rem;
+  }
+
+  .main-content {
+    padding: 1.8rem;
+  }
+
+  .questions-container {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Mobile Chatbot */
+  .chatbot-widget {
+    width: calc(100vw - 40px);
+    height: 70vh;
+    right: 20px;
+    bottom: 80px;
+    border-radius: 18px;
+  }
+
+  .chatbot-messages {
+    max-height: calc(70vh - 140px);
+    padding: 1.2rem;
+  }
+
+  .chatbot-launcher {
+    bottom: 20px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+  }
+
+  .message {
+    max-width: 90%;
+    gap: 0.7rem;
+  }
+
+  .message-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .message-content {
+    padding: 1rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .topic-title-main {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .chatbot-widget {
+    width: calc(100vw - 30px);
+    right: 15px;
+    border-radius: 16px;
+  }
+
+  .chatbot-input-container {
+    padding: 1.2rem;
+  }
+
+  #chatbotInput {
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+    min-height: 50px;
+  }
+
+  #sendMessage {
+    width: 50px;
+    height: 50px;
+  }
+
+  .chatbot-launcher {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+  }
+
+  .chatbot-launcher i {
+    font-size: 1.6rem;
+  }
+}
+
+/* New Styles for Enhanced UI */
+.highlight-text {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.inline-code {
+  background: rgba(52, 152, 219, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: var(--primary);
+  border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.list-item {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.list-item.numbered {
+  padding-left: 1.5rem;
+}
+
+.response-header {
+  margin: 1rem 0 0.5rem;
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.code-comment {
+  color: #6a9955;
+}
+
+.code-keyword {
+  color: #569cd6;
+}
+
+.code-constant {
+  color: #9cdcfe;
+}
+
+.code-number {
+  color: #b5cea8;
+}
+
+.code-string {
+  color: #ce9178;
+}
+
+.code-function {
+  color: #dcdcaa;
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  padding: 10px 0;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  animation: typingPulse 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typingPulse {
+  0%,
+  80%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.notification-dot {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+  }
+}
+
+.ai-answer {
+  padding: 1rem;
+  background: rgba(46, 204, 113, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid var(--secondary);
+  margin-top: 1rem;
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ai-answer-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.ai-answer-content {
+  line-height: 1.5;
+  color: #444;
+}
+
+.loading-answer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  color: #666;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(52, 152, 219, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+/* Answer Content Styles */
+.answer-content {
+  display: none;
+  max-height: none !important;
+  overflow: visible !important;
+  height: auto !important;
+  width: 100%;
+  transition: none !important;
+}
+
+.answer-content.show {
+  display: block !important;
+}
+
+.ai-answer {
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.ai-answer-content {
+  max-height: none !important;
+  overflow: visible !important;
+  height: auto !important;
+  width: 100%;
+}
+
+/* Remove any transitions that might cause blinking */
+.answer-content {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Ensure proper display */
+.question-card {
+  overflow: visible !important;
+}
+
+.questions-container {
+  overflow: visible !important;
+}
+
+/* Code block styles */
+.code-block {
+  max-height: none !important;
+  overflow: auto !important;
+  margin: 1rem 0;
+}
+
+.code-block pre {
+  max-height: none !important;
+  overflow: auto !important;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}     // Sample data for the JavaScript topics
+const NOTES = [
+  {
+    title: 'How the Internet and Websites Work',
+    link: 'https://www.notion.so/Web-Development-Course-25b3a78e0e2280919c1ed15f0878fa15',
+    questions: [
+      'What happens when you type a URL in the browser?',
+      'Explain the difference between HTTP and HTTPS.',
+      'What is DNS and how does it work?',
+      'Describe the client-server model.',
+      'What are the main components of a web page?',
+      'Explain the role of browsers in web development.',
+      'What is a web server and how does it work?',
+      'Describe the request-response cycle.',
+      'What are cookies and how are they used?',
+      'Explain the concept of web hosting.',
+    ],
+  },
+  {
+    title: 'Introduction to JavaScript & How JS Executes',
+    link: 'https://www.notion.so/Introduction-to-Javascript-2763a78e0e22809db99af584c1c5c6ec',
+    questions: [
+      'What is JavaScript and what is it used for?',
+      'Explain how JavaScript code is executed in a browser.',
+      'What is the difference between JavaScript and Java?',
+      'What is a JavaScript engine? Name a few.',
+      'Explain the role of the JavaScript runtime environment.',
+      'What are the different ways to include JavaScript in HTML?',
+      'What is the difference between client-side and server-side JavaScript?',
+      'Explain the concept of Just-In-Time (JIT) compilation.',
+      'What are the basic data types in JavaScript?',
+      'How does JavaScript handle asynchronous operations?',
+    ],
+  },
+  {
+    title: 'JavaScript Variables & Data Types (var, let, const, Mutable)',
+    link: 'https://www.notion.so/Lecture-02-Data-Type-2773a78e0e228042ba55df0265e78c6b',
+    questions: [
+      'What are the differences between var, let, and const?',
+      'Explain variable hoisting in JavaScript.',
+      'What are the primitive data types in JavaScript?',
+      'What is the difference between primitive and reference types?',
+      'Explain the concept of mutability in JavaScript.',
+      'How does JavaScript handle type coercion?',
+      'What is the typeof operator and how is it used?',
+      'Explain the concept of variable scope in JavaScript.',
+      'What is the Temporal Dead Zone?',
+      'How do you check if a variable is an array?',
+    ],
+  },
+  {
+    title: 'JavaScript Memory Management: Stack vs Heap',
+    link: 'https://www.notion.so/Lecture-03-V8-Engine-Memory-Allocation-27a3a78e0e228017963adec0533f0d78',
+    questions: [
+      'Explain the difference between stack and heap memory.',
+      'How does JavaScript manage memory allocation?',
+      'What is garbage collection in JavaScript?',
+      'Explain memory leaks and how to prevent them.',
+      'What is the mark-and-sweep algorithm?',
+      'How are primitive and reference types stored in memory?',
+      'What is the call stack and how does it work?',
+      'Explain the concept of memory lifecycle in programming.',
+      'What are the common causes of memory leaks in JavaScript?',
+      'How does the V8 engine optimize memory usage?',
+    ],
+  },
+  {
+    title: 'Conditionals, Loops & Operators in JavaScript',
+    link: 'https://www.notion.so/Lecture-04-27b3a78e0e228099a515cf3dd04dd9ac?source=copy_link',
+    questions: [
+      'What are the different types of conditional statements in JavaScript?',
+      'Explain the difference between == and === operators.',
+      'What are the different types of loops in JavaScript?',
+      'How does the ternary operator work?',
+      'What is short-circuit evaluation?',
+      'Explain the difference between for...in and for...of loops.',
+      'What are logical operators in JavaScript?',
+      'How does the switch statement work?',
+      'What is the difference between break and continue statements?',
+      'Explain the concept of truthy and falsy values.',
+    ],
+  },
+  {
+    title: 'JavaScript Numbers & Math Object (Random Number Generation)',
+    link: 'https://www.notion.so/Lecture-05-Number-Math-and-String-27d3a78e0e2280c8a606ceb93c369d1b',
+    questions: [
+      'How does JavaScript handle numbers?',
+      'What is the Math object and what are its common methods?',
+      'How do you generate random numbers in JavaScript?',
+      'Explain the difference between parseInt() and parseFloat().',
+      'What is NaN and how do you check for it?',
+      'How do you round numbers in JavaScript?',
+      'What is the maximum safe integer in JavaScript?',
+      'Explain the concept of floating point precision issues.',
+      'How do you convert numbers to different bases?',
+      'What is the difference between Math.floor() and Math.ceil()?',
+    ],
+  },
+  {
+    title: 'JavaScript Strings & Dates (In-Depth)',
+    link: 'https://www.notion.so/Lecture-06-String-and-Date-27e3a78e0e22803ca796f1eef30bc86b',
+    questions: [
+      'What are the different ways to create strings in JavaScript?',
+      'Explain common string methods in JavaScript.',
+      'How do you work with template literals?',
+      'What is the Date object and how is it used?',
+      'How do you format dates in JavaScript?',
+      'Explain the difference between getTime() and valueOf() for dates.',
+      'How do you compare two dates?',
+      'What is the Internationalization API for dates?',
+      'How do you extract parts of a string?',
+      'What are regular expressions and how are they used with strings?',
+    ],
+  },
+  {
+    title: 'JavaScript Arrays (In-Depth)',
+    link: 'https://www.notion.so/Lecture-07-Array-in-javascript-2803a78e0e228002bcb2dffd112b7c4c',
+    questions: [
+      'What are arrays in JavaScript and how are they created?',
+      'Explain common array methods (push, pop, shift, unshift).',
+      'What is the difference between slice() and splice()?',
+      'How do you iterate over arrays?',
+      'Explain the map(), filter(), and reduce() methods.',
+      'What are sparse arrays?',
+      'How do you check if an object is an array?',
+      'What is the difference between forEach() and map()?',
+      'How do you flatten a nested array?',
+      'What are array-like objects?',
+    ],
+  },
+  {
+    title: 'JavaScript Objects (In-Depth)',
+    link: 'https://www.notion.so/Lecture-08-Objects-in-Javascript-2833a78e0e2280109358ee39b2b35e4f',
+    questions: [
+      'What are objects in JavaScript and how are they created?',
+      'Explain the difference between dot notation and bracket notation.',
+      'How do you iterate over object properties?',
+      'What is object destructuring?',
+      'Explain the concept of object references.',
+      'How do you clone an object?',
+      'What are getters and setters in objects?',
+      'Explain the Object.keys(), Object.values(), and Object.entries() methods.',
+      'What is the difference between shallow copy and deep copy?',
+      'How does property enumeration work in JavaScript?',
+    ],
+  },
+  {
+    title: 'JavaScript Functions (In-Depth)',
+    link: 'https://www.notion.so/Lecture-09-Function-in-javascript-2843a78e0e2280aeb47fd280307b1a38',
+    questions: [
+      'What are the different ways to define functions in JavaScript?',
+      'Explain the difference between function declarations and function expressions.',
+      'What are arrow functions and how do they differ from regular functions?',
+      'Explain the concept of higher-order functions.',
+      'What are callback functions?',
+      'How do default parameters work in functions?',
+      'What is the arguments object?',
+      'Explain the concept of function currying.',
+      'What are IIFEs and why are they used?',
+      'How does the return statement work in functions?',
+    ],
+  },
+  {
+    title: 'How JavaScript Code Executes & Hoisting',
+    link: 'https://www.notion.so/Lecture-10-JS-Code-Execution-2853a78e0e2280a8a3c2e21a712ebd43',
+    questions: [
+      'Explain the JavaScript execution context.',
+      'What is hoisting and how does it work?',
+      'Explain the difference between function and variable hoisting.',
+      'What is the call stack?',
+      'How does JavaScript handle synchronous and asynchronous code?',
+      'Explain the creation and execution phases in JavaScript.',
+      'What is the Temporal Dead Zone?',
+      'How are let and const variables hoisted?',
+      'What is the scope chain?',
+      'Explain the concept of lexical scoping.',
+    ],
+  },
+  {
+    title: 'Closures, Scope & Higher-Order Functions',
+    link: 'https://www.notion.so/Lecture-11-Scope-and-Closures-2873a78e0e228059a849d06ad3267ed9',
+    questions: [
+      'What is a closure in JavaScript?',
+      'Explain lexical scoping.',
+      'How are closures used in practical applications?',
+      'What is the scope chain?',
+      'Explain the concept of higher-order functions.',
+      'How do closures help with data encapsulation?',
+      'What is a common mistake with closures in loops?',
+      'How do closures relate to memory management?',
+      'What is the module pattern and how does it use closures?',
+      'Explain the difference between global and local scope.',
+    ],
+  },
+  {
+    title: 'Map, Filter, Reduce, Set & Map in JavaScript',
+    link: 'https://www.notion.so/Lecture-12-filter-set-reducer-map-and-set-2873a78e0e2280e192bfc88fa8d0bea7',
+    questions: [
+      'Explain the map() method and how it works.',
+      'What is the filter() method and when would you use it?',
+      'How does the reduce() method work?',
+      'What is the difference between forEach() and map()?',
+      'Explain the Set object and its use cases.',
+      'What is the Map object and how is it different from regular objects?',
+      'How do you convert an array to a Set and vice versa?',
+      'What are the advantages of using Map over objects?',
+      'How do you chain array methods?',
+      'Explain the concept of immutability in relation to these methods.',
+    ],
+  },
+  {
+    title: 'DOM Manipulation in JavaScript (Document Object Model)',
+    link: 'https://www.notion.so/Lecture-13-Introduction-to-DOM-28b3a78e0e2280be9dbbf32ae46773b6',
+    questions: [
+      'What is the DOM?',
+      'Explain the difference between the DOM and HTML.',
+      'How do you select elements in the DOM?',
+      'What is the difference between getElementById and querySelector?',
+      'How do you create and add new elements to the DOM?',
+      'Explain the concept of event delegation.',
+      'What is the difference between innerHTML and textContent?',
+      'How do you traverse the DOM tree?',
+      'What is the difference between attributes and properties?',
+      'How do you remove elements from the DOM?',
+    ],
+  },
+  {
+    title: 'CRUD Operations in the DOM',
+    link: 'https://www.notion.so/Lecture-14-DOM-Manipulation-28c3a78e0e22802482ffcc9e423d3db0',
+    questions: [
+      'How do you create elements in the DOM?',
+      'Explain different methods to add elements to the DOM.',
+      'How do you update element content and attributes?',
+      'What are the different ways to remove elements from the DOM?',
+      'How do you replace elements in the DOM?',
+      'Explain the difference between append() and appendChild().',
+      'How do you clone elements in the DOM?',
+      'What is the DocumentFragment and why is it useful?',
+      'How do you handle dynamic content creation?',
+      'What are the performance considerations for DOM manipulation?',
+    ],
+  },
+  {
+    title: 'Events & Event Handling in JavaScript',
+    link: 'https://www.notion.so/Lecture-15-Event-Listener-and-Handler-28e3a78e0e2280b6a720c5387d057dae',
+    questions: [
+      'What is event propagation?',
+      'Explain the difference between event capturing and bubbling.',
+      'How do you add and remove event listeners?',
+      'What is the event object and what information does it contain?',
+      'How do you prevent default behavior in events?',
+      'What is event delegation and why is it useful?',
+      'How do you create custom events?',
+      'Explain the different types of mouse and keyboard events.',
+      'What is the difference between target and currentTarget?',
+      'How do you handle asynchronous events?',
+    ],
+  },
+  {
+    title: 'Event Loop in JavaScript (Why JS is Single-Threaded)',
+    link: 'https://www.notion.so/Lecture-17-Event-Loop-in-JS-2943a78e0e22801582e6c6f4a83ecd9f',
+    questions: [
+      'What is the event loop in JavaScript?',
+      'Explain the call stack, callback queue, and microtask queue.',
+      'Why is JavaScript single-threaded?',
+      'How does JavaScript handle asynchronous operations?',
+      'What is the difference between microtasks and macrotasks?',
+      'Explain the concept of non-blocking I/O.',
+      'How does setTimeout() work with the event loop?',
+      'What is the role of Web APIs in the browser?',
+      'How does Promise resolution relate to the event loop?',
+      'What are the potential issues with blocking the event loop?',
+    ],
+  },
+  {
+    title: 'Callback Hell & Async Programming',
+    link: 'https://www.notion.so/Lecture-17-Event-Loop-in-JS-2943a78e0e22801582e6c6f4a83ecd9f',
+    questions: [
+      'What is callback hell?',
+      'How does callback hell affect code readability and maintenance?',
+      'What are the alternatives to callback hell?',
+      'Explain the concept of error handling in callbacks.',
+      'How do you handle multiple asynchronous operations with callbacks?',
+      'What is the "Pyramid of Doom" in JavaScript?',
+      'How do promises help avoid callback hell?',
+      'How does async/await help with callback hell?',
+      'What are the best practices for working with callbacks?',
+      'Explain the concept of inversion of control with callbacks.',
+    ],
+  },
+  {
+    title: 'Promises in JavaScript | JSON vs JS Object',
+    link: 'https://www.notion.so/Lecture-19-Promise-in-JS-2993a78e0e228091a900ff5fa583094a',
+    questions: [
+      'What is a Promise in JavaScript?',
+      'Explain the states of a Promise.',
+      'How do you create and consume Promises?',
+      'What is the difference between Promise.all() and Promise.race()?',
+      'How do you handle errors in Promises?',
+      'What is the difference between JSON and JavaScript objects?',
+      'How do you convert between JSON and JavaScript objects?',
+      'Explain Promise chaining.',
+      'What are async functions and how do they relate to Promises?',
+      'How do you cancel a Promise?',
+    ],
+  },
+  {
+    title: 'Async/Await in JavaScript',
+    link: 'https://www.notion.so/Lecture-20-Async-Await-in-Javascript-2a73a78e0e228063b899c85279911c35',
+    questions: [
+      'What are async functions?',
+      'How does the await keyword work?',
+      'What is the difference between async/await and Promises?',
+      'How do you handle errors in async/await?',
+      'Can you use await outside of an async function?',
+      'How does async/await work with parallel operations?',
+      'What is the return type of an async function?',
+      'How do you convert existing Promise-based code to async/await?',
+      'What are the performance implications of async/await?',
+      'How do you handle multiple async operations with async/await?',
+    ],
+  },
+  {
+    title: 'Prototypes & Classes in JavaScript',
+    link: 'https://www.notion.so/Lecture-21-Prototype-and-Class-in-javascript-2a73a78e0e2280f9a76ad7141e3bd3b6',
+    questions: [
+      'What is prototypal inheritance?',
+      'Explain the prototype chain.',
+      'What is the difference between __proto__ and prototype?',
+      'How do classes work in JavaScript?',
+      'What is the difference between classical and prototypal inheritance?',
+      'How do you create objects using constructor functions?',
+      'Explain the super() keyword in classes.',
+      'What are static methods in classes?',
+      'How do you implement inheritance using classes?',
+      'What is the Object.create() method?',
+    ],
+  },
+  {
+    title: 'JavaScript "this" Keyword | call(), apply(), bind()',
+    link: 'https://www.notion.so/Lecture-22-This-Keyword-in-javascript-2aa3a78e0e22802aa703dfcdce606b37',
+    questions: [
+      'What is the "this" keyword in JavaScript?',
+      'How is the value of "this" determined?',
+      'Explain the different ways "this" can be bound.',
+      'What is the difference between call(), apply(), and bind()?',
+      'How does "this" work in arrow functions?',
+      'What is the value of "this" in global scope?',
+      'How does "this" work in event handlers?',
+      'Explain the concept of method borrowing.',
+      'How do you fix "this" context issues?',
+      'What is the new binding for "this"?',
+    ],
+  },
+];
+
+// Icons for different topics
+const topicIcons = [
+  'fa-globe',
+  'fa-code',
+  'fa-cube',
+  'fa-microchip',
+  'fa-sync-alt',
+  'fa-calculator',
+  'fa-font',
+  'fa-layer-group',
+  'fa-cubes',
+  'fa-cogs',
+  'fa-arrow-up',
+  'fa-link',
+  'fa-filter',
+  'fa-sitemap',
+  'fa-edit',
+  'fa-calendar-alt',
+  'fa-infinity',
+  'fa-hourglass-half',
+  'fa-handshake',
+  'fa-bolt',
+  'fa-users',
+  'fa-key',
+];
+
+// DOM elements
+// DOM Elements
+const topicsList = document.getElementById('topicsList');
+const currentTopicTitle = document.getElementById('currentTopicTitle');
+const topicLink = document.getElementById('topicLink');
+const questionsContainer = document.getElementById('questionsContainer');
+const welcomeMessage = document.getElementById('welcomeMessage');
+const searchInput = document.getElementById('searchInput');
+const progressFill = document.getElementById('progressFill');
+const completedCount = document.getElementById('completedCount');
+const totalCount = document.getElementById('totalCount');
+
+// Chatbot elements
+const chatbotWidget = document.getElementById('chatbotWidget');
+const chatbotToggle = document.getElementById('chatbotToggle');
+const chatbotLauncher = document.getElementById('chatbotLauncher');
+const chatbotMessages = document.getElementById('chatbotMessages');
+const chatbotInput = document.getElementById('chatbotInput');
+const sendMessage = document.getElementById('sendMessage');
+
+// Store user progress
+let userProgress = JSON.parse(localStorage.getItem('jsLearningProgress')) || {};
+
+// Store AI answers for questions
+let aiAnswers = JSON.parse(localStorage.getItem('jsLearningAIAnswers')) || {};
+
+// Track currently open answer
+let currentlyOpenAnswer = null;
+
+// Request limiting
+let lastRequestTime = 0;
+const MIN_REQUEST_INTERVAL = 2000; // 2 seconds between requests
+
+// Initialize the application
+function init() {
+  renderTopicsList();
+  setupEventListeners();
+  updateProgress();
+
+  // Load saved progress
+  loadProgress();
+}
+
+// Render the topics list in the sidebar
+function renderTopicsList(filteredTopics = NOTES) {
+  topicsList.innerHTML = '';
+
+  filteredTopics.forEach((topic, index) => {
+    const topicItem = document.createElement('li');
+    topicItem.className = 'topic-item';
+
+    // Check if topic has progress
+    const topicProgress = userProgress[topic.title] || {};
+    const completedQuestions =
+      Object.values(topicProgress).filter(Boolean).length;
+    const totalQuestions = topic.questions.length;
+
+    topicItem.innerHTML = `
+      <i class="fas ${topicIcons[index % topicIcons.length]} topic-icon"></i>
+      <span class="topic-title">${topic.title}</span>
+      ${
+        totalQuestions > 0
+          ? `<span class="topic-progress">${completedQuestions}/${totalQuestions}</span>`
+          : ''
+      }
+    `;
+
+    topicItem.addEventListener('click', () => {
+      selectTopic(topic, index);
+    });
+
+    topicsList.appendChild(topicItem);
+  });
+}
+
+// Set up event listeners
+function setupEventListeners() {
+  // Search functionality
+  searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredTopics = NOTES.filter((topic) =>
+      topic.title.toLowerCase().includes(searchTerm)
+    );
+    renderTopicsList(filteredTopics);
+  });
+
+  // Chatbot functionality
+  chatbotLauncher.addEventListener('click', () => {
+    chatbotWidget.classList.add('active');
+  });
+
+  chatbotToggle.addEventListener('click', () => {
+    chatbotWidget.classList.remove('active');
+  });
+
+  sendMessage.addEventListener('click', sendUserMessage);
+
+  chatbotInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      sendUserMessage();
+    }
+  });
+}
+
+// Select a topic and display its questions
+function selectTopic(topic, index) {
+  // Update active state in sidebar
+  document.querySelectorAll('.topic-item').forEach((item) => {
+    item.classList.remove('active');
+  });
+  document.querySelectorAll('.topic-item')[index].classList.add('active');
+
+  // Update main content
+  currentTopicTitle.textContent = topic.title;
+  topicLink.href = topic.link;
+  topicLink.style.display = 'inline-flex';
+
+  // Hide welcome message and show questions
+  welcomeMessage.style.display = 'none';
+
+  // Close any currently open answer
+  closeCurrentAnswer();
+
+  // Render questions
+  renderQuestions(topic.questions, topic.title);
+
+  // Update progress stats
+  updateProgress();
+}
+
+// Render questions for the selected topic
+function renderQuestions(questions, topicTitle) {
+  questionsContainer.innerHTML = '';
+
+  // Initialize topic progress if not exists
+  if (!userProgress[topicTitle]) {
+    userProgress[topicTitle] = {};
+  }
+
+  questions.forEach((question, index) => {
+    const isCompleted = userProgress[topicTitle][question] || false;
+    const hasAIAnswer = aiAnswers[question] || false;
+
+    const questionCard = document.createElement('div');
+    questionCard.className = `question-card ${isCompleted ? 'completed' : ''}`;
+    questionCard.innerHTML = `
+      <div class="question-header">
+        <div class="question-text">${index + 1}. ${question}</div>
+        <div class="question-status">
+          <i class="fas fa-${
+            isCompleted ? 'check-circle' : 'circle'
+          } status-icon ${isCompleted ? 'completed' : ''}"></i>
+        </div>
+      </div>
+      <button class="answer-btn" data-question="${question}" data-index="${index}">
+        <i class="fas fa-lightbulb"></i> ${
+          hasAIAnswer ? 'Show Answer' : 'Get AI Answer'
+        }
+      </button>
+      <div class="answer-content" id="answer-${index}" style="display: none;">
+        ${
+          hasAIAnswer
+            ? `
+          <div class="ai-answer">
+            <div class="ai-answer-header">
+              <i class="fas fa-robot"></i>
+              <span>AI Explanation</span>
+            </div>
+            <div class="ai-answer-content">
+              ${formatAIResponse(aiAnswers[question])}
+            </div>
+          </div>
+        `
+            : `
+          <div class="answer-placeholder">
+            <i class="fas fa-robot"></i>
+            <p>Click "Get AI Answer" to generate an explanation</p>
+          </div>
+        `
+        }
+        <div class="answer-actions">
+          <button class="action-btn mark-understood" data-question="${question}">
+            <i class="fas fa-check"></i> Mark as Understood
+          </button>
+          <button class="action-btn ask-ai" data-question="${question}">
+            <i class="fas fa-robot"></i> Ask AI for More Details
+          </button>
+        </div>
+      </div>
+    `;
+
+    questionsContainer.appendChild(questionCard);
+  });
+
+  // Add event listeners to answer buttons using event delegation
+  setupAnswerButtonListeners();
+  
+  // Add event listeners for action buttons
+  reattachAllEventListeners();
+}
+
+// Setup answer button listeners using event delegation
+function setupAnswerButtonListeners() {
+  // Remove any existing listeners and use event delegation
+  questionsContainer.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('answer-btn') || e.target.closest('.answer-btn')) {
+      const answerBtn = e.target.classList.contains('answer-btn') 
+        ? e.target 
+        : e.target.closest('.answer-btn');
+      
+      const question = answerBtn.getAttribute('data-question');
+      const index = answerBtn.getAttribute('data-index');
+      const topicTitle = currentTopicTitle.textContent;
+      const questionCard = answerBtn.closest('.question-card');
+      const answerContent = document.getElementById(`answer-${index}`);
+
+      console.log('Answer button clicked', { 
+        question, 
+        index, 
+        answerContent, 
+        currentDisplay: answerContent.style.display 
+      });
+
+      // If answer already exists, just toggle display
+      if (aiAnswers[question]) {
+        if (answerContent.style.display === 'block') {
+          console.log('Hiding answer');
+          closeAnswer(answerContent, answerBtn, question);
+        } else {
+          console.log('Showing answer');
+          // Close any currently open answer first
+          if (currentlyOpenAnswer && currentlyOpenAnswer !== answerContent) {
+            closeCurrentAnswer();
+          }
+          openAnswer(answerContent, answerBtn, question);
+        }
+      } else {
+        // Generate AI answer
+        await generateAndDisplayAIAnswer(question, answerContent, answerBtn, index);
+      }
+    }
+  });
+}
+
+// Generate and display AI answer
+async function generateAndDisplayAIAnswer(question, answerContent, answerBtn, index) {
+  answerBtn.disabled = true;
+  answerBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+
+  try {
+    const aiAnswer = await generateAIAnswer(question);
+    aiAnswers[question] = aiAnswer;
+    localStorage.setItem('jsLearningAIAnswers', JSON.stringify(aiAnswers));
+
+    // Update the answer content with formatted response
+    answerContent.innerHTML = `
+      <div class="ai-answer">
+        <div class="ai-answer-header">
+          <i class="fas fa-robot"></i>
+          <span>AI Explanation</span>
+        </div>
+        <div class="ai-answer-content">
+          ${formatAIResponse(aiAnswer)}
+        </div>
+      </div>
+      <div class="answer-actions">
+        <button class="action-btn mark-understood" data-question="${question}">
+          <i class="fas fa-check"></i> Mark as Understood
+        </button>
+        <button class="action-btn ask-ai" data-question="${question}">
+          <i class="fas fa-robot"></i> Ask AI for More Details
+        </button>
+      </div>
+    `;
+
+    // Apply syntax highlighting to code blocks
+    applySyntaxHighlightingToAnswer(answerContent);
+
+    // Update the button text to "Show Answer" since we now have an answer
+    answerBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Show Answer';
+    answerBtn.disabled = false;
+
+    // Reattach event listeners for the new buttons
+    const questionCard = answerContent.closest('.question-card');
+    reattachAnswerEventListeners(questionCard, question, currentTopicTitle.textContent);
+    
+    console.log('AI answer generated successfully');
+  } catch (error) {
+    console.error('Error generating AI answer:', error);
+    answerBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Try Again';
+    setTimeout(() => {
+      answerBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Get AI Answer';
+      answerBtn.disabled = false;
+    }, 2000);
+  }
+}
+
+// Open answer - SIMPLIFIED VERSION
+function openAnswer(answerContent, answerBtn, question) {
+  console.log('Opening answer...');
+  
+  // First, ensure the answer content is properly styled
+  answerContent.style.display = 'block';
+  answerContent.style.maxHeight = 'none';
+  answerContent.style.overflow = 'visible';
+  answerContent.style.height = 'auto';
+  answerContent.style.opacity = '1';
+  answerContent.style.transform = 'translateY(0)';
+  
+  // Update button text
+  answerBtn.innerHTML = '<i class="fas fa-eye-slash"></i> Hide Answer';
+  currentlyOpenAnswer = answerContent;
+  
+  console.log('Answer should be visible now', {
+    display: answerContent.style.display,
+    maxHeight: answerContent.style.maxHeight,
+    opacity: answerContent.style.opacity
+  });
+
+  // Scroll to the answer smoothly
+  setTimeout(() => {
+    const answerPosition = answerContent.getBoundingClientRect().top + window.pageYOffset;
+    const offset = 100;
+    
+    window.scrollTo({
+      top: answerPosition - offset,
+      behavior: 'smooth'
+    });
+  }, 50);
+}
+
+// Close specific answer - SIMPLIFIED VERSION
+function closeAnswer(answerContent, answerBtn, question) {
+  console.log('Closing answer...');
+  
+  // Simply hide the answer content
+  answerContent.style.display = 'none';
+  answerBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Show Answer';
+  
+  if (currentlyOpenAnswer === answerContent) {
+    currentlyOpenAnswer = null;
+  }
+  
+  console.log('Answer closed successfully');
+}
+
+// Close currently open answer
+function closeCurrentAnswer() {
+  if (currentlyOpenAnswer) {
+    const answerBtn = currentlyOpenAnswer.previousElementSibling;
+    const question = answerBtn.getAttribute('data-question');
+    closeAnswer(currentlyOpenAnswer, answerBtn, question);
+  }
+}
+
+// Apply syntax highlighting to answer content
+function applySyntaxHighlightingToAnswer(container) {
+  const codeBlocks = container.querySelectorAll('pre code');
+  codeBlocks.forEach((block) => {
+    const code = block.textContent;
+
+    let highlighted = code
+      .replace(/(\/\/.*$)/gm, '<span class="code-comment">$1</span>')
+      .replace(/(\/\*[\s\S]*?\*\/)/gm, '<span class="code-comment">$1</span>')
+      .replace(
+        /\b(function|return|const|let|var|if|else|for|while|switch|case|break|continue|class|extends|super|this|new|typeof|instanceof|void|delete|in|of|async|await|export|import|default|from|as)\b/g,
+        '<span class="code-keyword">$1</span>'
+      )
+      .replace(
+        /\b(true|false|null|undefined|NaN|Infinity)\b/g,
+        '<span class="code-constant">$1</span>'
+      )
+      .replace(
+        /\b(\d+\.?\d*|0x[\da-fA-F]+)\b/g,
+        '<span class="code-number">$1</span>'
+      )
+      .replace(/(["'`](.*?)["'`])/g, '<span class="code-string">$1</span>')
+      .replace(/(\w+)(?=\s*\()/g, '<span class="code-function">$1</span>');
+
+    block.innerHTML = highlighted;
+  });
+}
+
+// Reattach event listeners for all action buttons
+function reattachAllEventListeners() {
+  // Remove existing listeners first
+  document.querySelectorAll('.mark-understood').forEach((btn) => {
+    btn.replaceWith(btn.cloneNode(true));
+  });
+  
+  document.querySelectorAll('.ask-ai').forEach((btn) => {
+    btn.replaceWith(btn.cloneNode(true));
+  });
+
+  // Add new listeners
+  document.querySelectorAll('.mark-understood').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const question = e.target.getAttribute('data-question');
+      const topicTitle = currentTopicTitle.textContent;
+      markQuestionAsCompleted(topicTitle, question);
+    });
+  });
+
+  document.querySelectorAll('.ask-ai').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const question = e.target.getAttribute('data-question');
+      askAIAboutQuestion(question);
+    });
+  });
+}
+
+// Reattach event listeners for a specific question card
+function reattachAnswerEventListeners(questionCard, question, topicTitle) {
+  const markBtn = questionCard.querySelector('.mark-understood');
+  const askBtn = questionCard.querySelector('.ask-ai');
+
+  if (markBtn) {
+    // Clone and replace to remove existing listeners
+    const newMarkBtn = markBtn.cloneNode(true);
+    markBtn.replaceWith(newMarkBtn);
+    
+    newMarkBtn.addEventListener('click', () => {
+      markQuestionAsCompleted(topicTitle, question);
+    });
+  }
+
+  if (askBtn) {
+    // Clone and replace to remove existing listeners
+    const newAskBtn = askBtn.cloneNode(true);
+    askBtn.replaceWith(newAskBtn);
+    
+    newAskBtn.addEventListener('click', () => {
+      askAIAboutQuestion(question);
+    });
+  }
+}
+
+// Generate AI answer for a question
+async function generateAIAnswer(question) {
+  // Prevent rapid requests
+  const now = Date.now();
+  if (now - lastRequestTime < MIN_REQUEST_INTERVAL) {
+    throw new Error('Rate limit exceeded');
+  }
+  lastRequestTime = now;
+
+  try {
+    // Use real backend API
+    const response = await getAIResponse(
+      `Provide a comprehensive explanation for this JavaScript concept: "${question}". 
+      Please include:
+      1. Clear definition and purpose
+      2. Simple code examples
+      3. Common use cases
+      4. Best practices
+      5. Potential pitfalls to avoid
+      
+      Format the response with clear sections and code formatting where appropriate.
+      Make sure the answer is detailed and covers all aspects of the concept.
+      Provide complete, well-structured explanations without truncation.`
+    );
+    return response;
+  } catch (error) {
+    console.error('AI answer generation failed:', error);
+    // Return a fallback answer
+    return getFallbackAnswer(question);
+  }
+}
+
+// Get fallback answer when AI is unavailable
+function getFallbackAnswer(question) {
+  // ... (keep your existing fallback answer function)
+  return `**Explanation for: ${question}**
+
+This concept is an important part of JavaScript programming. While I'm currently experiencing high demand, here's what you should know:
+
+**💡 Key Points:**
+• Practice with code examples to better understand it
+• Review MDN documentation for detailed information
+• Try implementing this in small projects
+
+**🔄 For a more detailed AI-generated explanation:** Please try the "Get AI Answer" button again in a few moments.`;
+}
+
+// Mark question as completed
+function markQuestionAsCompleted(topicTitle, question) {
+  if (!userProgress[topicTitle]) {
+    userProgress[topicTitle] = {};
+  }
+
+  userProgress[topicTitle][question] = true;
+  saveProgress();
+  updateProgress();
+
+  // Update UI
+  const questionCards = document.querySelectorAll('.question-card');
+  questionCards.forEach((card) => {
+    const questionText = card
+      .querySelector('.question-text')
+      .textContent.replace(/^\d+\.\s/, '');
+    if (questionText === question) {
+      card.classList.add('completed');
+      card.querySelector('.status-icon').className =
+        'fas fa-check-circle status-icon completed';
+
+      // Update button text if answer exists
+      const answerBtn = card.querySelector('.answer-btn');
+      if (aiAnswers[question]) {
+        answerBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Show Answer';
+      }
+    }
+  });
+}
+
+// Ask AI about a question
+function askAIAboutQuestion(question) {
+  chatbotWidget.classList.add('active');
+  chatbotInput.value = `Can you provide more detailed explanation with examples for: ${question}`;
+  sendUserMessage();
+}
+
+// Update progress bar and stats
+function updateProgress() {
+  let totalQuestions = 0;
+  let completedQuestions = 0;
+
+  // Calculate overall progress
+  NOTES.forEach((topic) => {
+    const topicQuestions = topic.questions || [];
+    totalQuestions += topicQuestions.length;
+
+    const topicProgress = userProgress[topic.title] || {};
+    completedQuestions += Object.values(topicProgress).filter(Boolean).length;
+  });
+
+  if (totalQuestions > 0) {
+    const progressPercentage = (completedQuestions / totalQuestions) * 100;
+    progressFill.style.width = `${progressPercentage}%`;
+    completedCount.textContent = completedQuestions;
+    totalCount.textContent = totalQuestions;
+  } else {
+    progressFill.style.width = '0%';
+    completedCount.textContent = '0';
+    totalCount.textContent = '0';
+  }
+}
+
+// Save progress to localStorage
+function saveProgress() {
+  localStorage.setItem('jsLearningProgress', JSON.stringify(userProgress));
+}
+
+// Load progress from localStorage
+function loadProgress() {
+  const savedProgress = localStorage.getItem('jsLearningProgress');
+  if (savedProgress) {
+    userProgress = JSON.parse(savedProgress);
+    updateProgress();
+  }
+
+  const savedAIAnswers = localStorage.getItem('jsLearningAIAnswers');
+  if (savedAIAnswers) {
+    aiAnswers = JSON.parse(savedAIAnswers);
+  }
+}
+
+// Enhanced AI response function with better error handling
+async function getAIResponse(message) {
+  try {
+    const response = await fetch(
+      'https://development-journey.vercel.app/api/chat',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message }),
+      }
+    );
+
+    if (!response.ok) {
+      if (response.status === 429) {
+        throw new Error('rate limit exceeded');
+      } else if (response.status === 500) {
+        throw new Error('server error');
+      } else {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+    }
+
+    const data = await response.json();
+
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    return data.response;
+  } catch (error) {
+    console.error('Backend API failed:', error);
+    throw error;
+  }
+}
+
+// Format AI response with proper styling
+function formatAIResponse(text) {
+  if (!text) return '';
+
+  let formattedText = text;
+
+  // Convert markdown-style bold **text** to HTML
+  formattedText = formattedText.replace(
+    /\*\*(.*?)\*\*/g,
+    '<strong class="highlight-text">$1</strong>'
+  );
+
+  // Convert markdown-style italic *text* to HTML
+  formattedText = formattedText.replace(
+    /\*(.*?)\*/g,
+    '<em class="italic-text">$1</em>'
+  );
+
+  // Convert markdown-style code blocks ```code``` to formatted blocks
+  formattedText = formattedText.replace(
+    /```(\w+)?\n?([\s\S]*?)```/g,
+    function (match, language, code) {
+      const langClass = language ? `language-${language}` : '';
+      return `<div class="code-block">
+        <div class="code-header">${
+          language ? language.toUpperCase() + ' Code' : 'Code'
+        }</div>
+        <pre><code class="${langClass}">${code.trim()}</code></pre>
+      </div>`;
+    }
+  );
+
+  // Convert inline code `code` to styled spans
+  formattedText = formattedText.replace(
+    /`([^`]+)`/g,
+    '<code class="inline-code">$1</code>'
+  );
+
+  // Convert bullet points and lists
+  formattedText = formattedText.replace(
+    /\n\s*[-•*]\s+(.*)/g,
+    '\n<div class="list-item">• $1</div>'
+  );
+
+  // Convert numbered lists
+  formattedText = formattedText.replace(
+    /\n\s*(\d+)\.\s+(.*)/g,
+    '\n<div class="list-item numbered">$1. $2</div>'
+  );
+
+  // Convert headers
+  formattedText = formattedText.replace(
+    /\n#\s+(.*)/g,
+    '\n<h4 class="response-header">$1</h4>'
+  );
+
+  // Convert line breaks and paragraphs
+  formattedText = formattedText.replace(/\n\n/g, '</p><p>');
+  formattedText = formattedText.replace(/\n/g, '<br>');
+
+  // Wrap in paragraph if no other formatting
+  if (!formattedText.includes('<') && !formattedText.includes('</')) {
+    formattedText = `<p>${formattedText}</p>`;
+  }
+
+  return formattedText;
+}
+
+// Add message to chatbot
+function addMessage(content, sender) {
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `message ${sender}-message`;
+
+  const avatar = document.createElement('div');
+  avatar.className = 'message-avatar';
+  avatar.innerHTML = `<i class="fas fa-${
+    sender === 'user' ? 'user' : 'robot'
+  }"></i>`;
+
+  const messageContent = document.createElement('div');
+  messageContent.className = 'message-content';
+
+  if (
+    sender === 'bot' &&
+    typeof content === 'string' &&
+    content.includes('<')
+  ) {
+    messageContent.innerHTML = content;
+  } else {
+    const textNode = document.createElement('p');
+    textNode.textContent = content;
+    messageContent.appendChild(textNode);
+  }
+
+  messageDiv.appendChild(avatar);
+  messageDiv.appendChild(messageContent);
+
+  chatbotMessages.appendChild(messageDiv);
+
+  // Apply syntax highlighting
+  applySyntaxHighlighting();
+
+  // Scroll to bottom
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+// Apply syntax highlighting
+function applySyntaxHighlighting() {
+  const codeBlocks = chatbotMessages.querySelectorAll('pre code');
+  codeBlocks.forEach((block) => {
+    const code = block.textContent;
+
+    let highlighted = code
+      .replace(/(\/\/.*$)/gm, '<span class="code-comment">$1</span>')
+      .replace(/(\/\*[\s\S]*?\*\/)/gm, '<span class="code-comment">$1</span>')
+      .replace(
+        /\b(function|return|const|let|var|if|else|for|while|switch|case|break|continue|class|extends|super|this|new|typeof|instanceof|void|delete|in|of|async|await|export|import|default|from|as)\b/g,
+        '<span class="code-keyword">$1</span>'
+      )
+      .replace(
+        /\b(true|false|null|undefined|NaN|Infinity)\b/g,
+        '<span class="code-constant">$1</span>'
+      )
+      .replace(
+        /\b(\d+\.?\d*|0x[\da-fA-F]+)\b/g,
+        '<span class="code-number">$1</span>'
+      )
+      .replace(/(["'`](.*?)["'`])/g, '<span class="code-string">$1</span>')
+      .replace(/(\w+)(?=\s*\()/g, '<span class="code-function">$1</span>');
+
+    block.innerHTML = highlighted;
+  });
+}
+
+// Send user message to chatbot
+async function sendUserMessage() {
+  const message = chatbotInput.value.trim();
+  if (!message) return;
+
+  // Prevent rapid requests
+  const now = Date.now();
+  if (now - lastRequestTime < MIN_REQUEST_INTERVAL) {
+    addMessage('Please wait a moment before sending another message.', 'bot');
+    return;
+  }
+  lastRequestTime = now;
+
+  // Add user message to chat
+  addMessage(message, 'user');
+  chatbotInput.value = '';
+
+  // Show typing indicator
+  showTypingIndicator();
+
+  try {
+    const response = await getAIResponse(message);
+    removeTypingIndicator();
+    const formattedResponse = formatAIResponse(response);
+    addMessage(formattedResponse, 'bot');
+  } catch (error) {
+    removeTypingIndicator();
+    console.error('Chat error:', error);
+
+    if (error.message.includes('rate limit') || error.message.includes('429')) {
+      addMessage(getRateLimitMessage(), 'bot');
+    } else {
+      addMessage(getFallbackResponse(message), 'bot');
+    }
+  }
+}
+
+// Show typing indicator
+function showTypingIndicator() {
+  const typingDiv = document.createElement('div');
+  typingDiv.className = 'message bot-message';
+  typingDiv.id = 'typingIndicator';
+
+  const avatar = document.createElement('div');
+  avatar.className = 'message-avatar';
+  avatar.innerHTML = '<i class="fas fa-robot"></i>';
+
+  const content = document.createElement('div');
+  content.className = 'message-content';
+  content.innerHTML = `
+    <div class="typing-indicator">
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+    </div>
+  `;
+
+  typingDiv.appendChild(avatar);
+  typingDiv.appendChild(content);
+
+  chatbotMessages.appendChild(typingDiv);
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+// Remove typing indicator
+function removeTypingIndicator() {
+  const typingIndicator = document.getElementById('typingIndicator');
+  if (typingIndicator) {
+    typingIndicator.remove();
+  }
+}
+
+// Fallback responses for chatbot
+function getFallbackResponse(message) {
+  return `I'd be happy to help you learn JavaScript! Currently, I'm experiencing high demand, but here are some topics I can help with:
+
+**📚 Available Topics:**
+• Arrays and array methods
+• Functions and closures  
+• Objects and prototypes
+• DOM manipulation
+• Events and event handling
+• ES6+ features
+• Async programming
+
+**💡 Try asking about:**
+• "How do closures work in JavaScript?"
+• "What are the different array methods?"
+• "Explain promises and async/await"
+
+Please try again in a few moments for detailed AI explanations!`;
+}
+
+// Rate limit message
+function getRateLimitMessage() {
+  return `**⚠️ Rate Limit Reached**
+
+I've reached the maximum number of requests I can process right now. This is a temporary limitation.
+
+**🔄 What you can do:**
+• Wait 1-2 minutes and try again
+• Continue exploring the JavaScript questions in the sidebar
+• Practice with the code examples provided
+• Check back in a few moments
+
+The AI service should be available again shortly. Thank you for your patience!`;
+}
+
+// Initialize the app when DOM is loaded
+document.addEventListener('DOMContentLoaded', init); this was my notes keaper i want to upgrade and mange this code as i want to also add the reacts notes mnage the as u may optimize according to u make the ui best  of the best also  take in mind the user experience upgrade the code not dister the array od data                                give me the comlete html css and js files as the date may use the dummy as i will adjust leter and also make the custome scroll bar for both horizuntal and vertical where they will need also use the customize fonts to make the ui good and use the api that i add in the code where the ai integrated make the ui in oragesh shade if possible
