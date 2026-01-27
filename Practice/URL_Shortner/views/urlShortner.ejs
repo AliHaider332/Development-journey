@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>URL Shortener</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        background: #fff;
+        padding: 25px;
+        width: 600px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      input,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+      }
+
+      button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .secondary-btn {
+        background: #28a745;
+      }
+
+      .result {
+        margin-top: 15px;
+        background: #e9ecef;
+        padding: 10px;
+        border-radius: 4px;
+        word-break: break-all;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        display: none;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+      }
+
+      th {
+        background: #007bff;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>URL Shortener</h2>
+
+      <!-- Short URL Form -->
+      <form action="<%= actionRoute %>" method="POST">
+        <input
+          type="text"
+          name="originalURL"
+          placeholder="Enter your URL here"
+          required
+        />
+        <button type="submit">Generate Short URL</button>
+      </form>
+
+      <!-- Generated Short URL -->
+      <% if (managedUrl) { %>
+      <div class="result">
+        <strong>Short URL:</strong>
+        <p><%= managedUrl %></p>
+      </div>
+      <% } %>
+
+      <!-- Toggle Button -->
+      <button class="secondary-btn" onclick="toggleTable()">
+        Show All Encoded URLs
+      </button>
+
+      <!-- URLs Table -->
+      <table id="urlTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Original URL</th>
+            <th>Short URL</th>
+            <th>Clicks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (allUrls && allUrls.length > 0) { %> <% allUrls.forEach((url,
+          index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= url.original_URL %></td>
+            <td><%= `http://localhost:9000/${url.shortID}`%></td>
+            <td><%= url.impressions.length %></td>
+          </tr>
+          <% }) %> <% } else { %>
+          <tr>
+            <td colspan="4">No URLs found</td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function toggleTable() {
+        const table = document.getElementById('urlTable');
+        table.style.display =
+          table.style.display === 'none' || table.style.display === ''
+            ? 'table'
+            : 'none';
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign Up</title>
+    <style>
+      /* Body styling */
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+
+      /* Form box */
+      .box {
+        background: #fff;
+        padding: 30px;
+        width: 350px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      /* Input and select styling */
+      input,
+      select {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+
+      select {
+        cursor: pointer;
+      }
+
+      /* Button styling */
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #667eea;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 15px;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background: #5a67d8;
+      }
+
+      /* Error message */
+      .error {
+        color: red;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      /* Link styling */
+      a {
+        display: block;
+        margin-top: 15px;
+        color: #667eea;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h2>Create Account</h2>
+
+      <!-- Display error from server if exists -->
+      <% if (error) { %>
+        <p class="error"><%= error %></p>
+      <% } %>
+
+      <form action="/signin" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+
+        <!-- Role selection dropdown -->
+        <label for="role">Select Role</label>
+        <select name="role" id="role" required>
+          <option value="" disabled selected>--Select role--</option>
+          <option value="normal">Normal</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <a href="/login">Already have an account? Login</a>
+    </div>
+  </body>
+</html>

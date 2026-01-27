@@ -1266,239 +1266,602 @@ const JS_TOPICS = [
 
 // React Topics
 const REACT_TOPICS = [
-    {
-        title: "React Basics",
-        link: "#",
-        questions: [
-            {
-                question: "What is JSX?",
-                answer: `JSX (JavaScript XML) is a syntax extension that allows writing HTML-like code in JavaScript.
-
-Example:
-const element = <h1>Hello, world!</h1>;
-
-Features:
-• Not HTML - gets compiled to JavaScript
-• Can embed expressions with {}
-• Must have single root element
-• className instead of class
-• self-closing tags for elements without children
-
-Compiled to:
-React.createElement('h1', null, 'Hello, world!')`
-            },
-            {
-                question: "Components: Class vs Functional",
-                answer: `Two ways to create React components:
-
-Class Component:
-class Welcome extends React.Component {
-    render() {
-        return <h1>Hello, {this.props.name}</h1>;
+  {
+    title: 'React Fundamentals',
+    link: '#',
+    questions: [
+      {
+        question: 'What is React and how is it implemented in JavaScript?',
+        answer: `React is a declarative, component-based JavaScript library for building user interfaces.
+    
+    Core Implementation Concepts:
+    
+    Virtual DOM:
+    • React creates a lightweight representation of the actual DOM
+    • Updates to state/props trigger re-renders
+    • React diffs the Virtual DOM with previous version
+    • Only applies minimal necessary changes to real DOM
+    
+    JSX to JavaScript Transformation:
+    // JSX:
+    const element = <h1 className="title">Hello World</h1>;
+    
+    // Transpiled to:
+    const element = React.createElement(
+    'h1',
+    {className: 'title'},
+    'Hello World'
+    );
+    
+    Component Reconciliation:
+    • React maintains a tree of component instances
+    • Each component has lifecycle methods/hooks
+    • Efficient diffing algorithm (O(n) complexity)
+    
+    One-Way Data Flow:
+    • Data flows from parent to child via props
+    • State changes trigger re-renders
+    • Unidirectional data flow simplifies debugging
+    
+    Key Implementation Details:
+    • Uses requestIdleCallback for scheduling
+    • Batched updates for performance
+    • Synthetic events for cross-browser compatibility
+    • Fiber architecture for incremental rendering}, { question: "What is the Virtual DOM and how does it work?", answer:Virtual DOM is a programming concept where an ideal/virtual representation of UI is kept in memory.
+    
+    How it works:
+    
+    Initial Render:
+    • React creates Virtual DOM tree from components
+    • Renders this to actual DOM
+    
+    On State Change:
+    • React creates new Virtual DOM tree
+    • Compares with previous (diffing algorithm)
+    • Calculates minimal set of DOM operations
+    • Batch updates real DOM
+    
+    Example Flow:
+    // Initial state
+    const vdom1 = {
+    type: 'div',
+    props: { className: 'container' },
+    children: [{ type: 'p', children: 'Hello' }]
+    };
+    
+    // After state change
+    const vdom2 = {
+    type: 'div',
+    props: { className: 'container active' },
+    children: [{ type: 'p', children: 'Hello World' }]
+    };
+    
+    // React will only:
+    
+    Update className from 'container' to 'container active'
+    
+    Update text content from 'Hello' to 'Hello World'
+    
+    Benefits:
+    • Performance optimization
+    • Declarative programming model
+    • Abstracts away direct DOM manipulation}, { question: "What are React Components and how do they differ from regular HTML elements?", answer:React Components are reusable, self-contained UI pieces with their own logic and appearance.
+    
+    Class Component Example:
+    class Button extends React.Component {
+    constructor(props) {
+    super(props);
+    this.state = { clicked: false };
     }
-}
-
-Functional Component (with Hooks):
-function Welcome(props) {
-    return <h1>Hello, {props.name}</h1>;
-}
-
-// With hooks:
-function Welcome({ name }) {
-    const [state, setState] = useState('');
-    return <h1>Hello, {name}</h1>;
-}
-
-Functional components are now preferred with hooks.`
-            },
-            {
-                question: "What are props?",
-                answer: `Props (properties) are read-only inputs to components, passed from parent to child.
-
-Example:
-// Parent component
-<Welcome name="John" age={30} />
-
-// Child component
-function Welcome(props) {
-    return (
-        <div>
-            Hello {props.name}, age {props.age}
-        </div>
-    );
-}
-
-// Or with destructuring:
-function Welcome({ name, age }) {
-    return (
-        <div>
-            Hello {name}, age {age}
-        </div>
-    );
-}
-
-Key points:
-• Props are read-only
-• Used to pass data down
-• Can be any JavaScript value`
-            }
-        ]
-    },
-    {
-        title: "React Hooks",
-        link: "#",
-        questions: [
-            {
-                question: "What is useState?",
-                answer: `useState is a hook that lets you add state to functional components.
-
-Syntax:
-const [state, setState] = useState(initialValue);
-
-Example:
-function Counter() {
+    
+    text
+    handleClick = () => {
+        this.setState({ clicked: true });
+    };
+    
+    render() {
+        return (
+            <button 
+                onClick={this.handleClick}
+                className={this.state.clicked ? 'active' : ''}
+            >
+                {this.props.text}
+            </button>
+        );
+    }
+    }
+    
+    Functional Component Example (with Hooks):
+    function Counter() {
     const [count, setCount] = useState(0);
+    
+    text
+    const increment = () => setCount(count + 1);
     
     return (
         <div>
             <p>Count: {count}</p>
-            <button onClick={() => setCount(count + 1)}>
-                Increment
-            </button>
+            <button onClick={increment}>Increment</button>
         </div>
     );
-}
-
-Key points:
-• Returns current state and setter function
-• State persists between re-renders
-• Updates trigger re-render
-• Can use multiple useState hooks`
-            },
-            {
-                question: "Explain useEffect hook",
-                answer: `useEffect lets you perform side effects in functional components.
-
-Syntax:
-useEffect(() => {
-    // Side effect code
-    return () => {
-        // Cleanup code
+    }
+    
+    Key Differences from HTML elements:
+    • Have state and lifecycle
+    • Can contain business logic
+    • Reusable with different props
+    • Can manage their own behavior
+    • Encapsulate styling and functionality
+    
+    Usage:
+    <Button text="Click Me" />
+    <Counter />
+    <Welcome name="John" />
+    
+    React components ultimately render to regular HTML elements but with enhanced capabilities.}, { question: "How does React handle events differently from vanilla JavaScript?", answer:React uses Synthetic Events - a cross-browser wrapper around native browser events.
+    
+    Vanilla JavaScript Event Handling:
+    document.getElementById('btn').addEventListener('click', (e) => {
+    console.log(e.target.value);
+    e.preventDefault();
+    });
+    
+    React Event Handling:
+    function Form() {
+    const handleSubmit = (e) => {
+    e.preventDefault(); // Synthetic Event
+    console.log('Form submitted');
     };
-}, [dependencies]);
-
-Examples:
-// Run on every render
-useEffect(() => {
-    console.log('Component rendered');
-});
-
-// Run only on mount
-useEffect(() => {
-    console.log('Component mounted');
-    return () => console.log('Component unmounted');
-}, []);
-
-// Run when dependencies change
-useEffect(() => {
-    fetchData(userId);
-}, [userId]);`
-            },
-            {
-                question: "What is useContext?",
-                answer: `useContext hook allows consuming context in functional components.
-
-Example:
-// Create context
-const ThemeContext = React.createContext('light');
-
-// Provide context
-function App() {
+    
+    text
+    const handleChange = (e) => {
+        console.log(e.target.value);  // Cross-browser compatible
+    };
+    
     return (
-        <ThemeContext.Provider value="dark">
-            <Toolbar />
-        </ThemeContext.Provider>
+        <form onSubmit={handleSubmit}>
+            <input onChange={handleChange} />
+            <button type="submit">Submit</button>
+        </form>
     );
-}
-
-// Consume context
-function Toolbar() {
-    const theme = useContext(ThemeContext);
-    return <div>Current theme: {theme}</div>;
-}
-
-Benefits:
-• Avoids prop drilling
-• Share data across component tree
-• Can have multiple contexts`
-            }
-        ]
-    },
-    {
-        title: "Advanced React",
-        link: "#",
-        questions: [
-            {
-                question: "Explain React.memo",
-                answer: `React.memo is a higher-order component that memoizes a component, preventing unnecessary re-renders.
-
-Example:
-const MyComponent = React.memo(function MyComponent(props) {
-    /* render using props */
-});
-
-// Only re-renders if props change
-const MemoizedComponent = React.memo(MyComponent);
-
-// Custom comparison function
-const MemoizedComponent = React.memo(MyComponent, (prevProps, nextProps) => {
-    return prevProps.value === nextProps.value;
-});
-
-Use when:
-• Component renders often with same props
-• Rendering is expensive
-• Props don't change frequently`
-            },
-            {
-                question: "What are refs in React?",
-                answer: `Refs provide a way to access DOM nodes or React elements.
-
-Creating refs:
-// Class component
-class MyComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.myRef = React.createRef();
     }
     
-    render() {
-        return <div ref={this.myRef} />;
-    }
-}
-
-// Functional component with useRef
-function MyComponent() {
-    const myRef = useRef(null);
+    Key Differences:
     
-    useEffect(() => {
-        console.log(myRef.current); // Access DOM node
-    }, []);
-    
-    return <div ref={myRef} />;
-}
-
-Common uses:
-• Managing focus, text selection, or media playback
-• Triggering imperative animations
-• Integrating with third-party DOM libraries`
-            }
-        ]
+    Event Pooling:
+    // Synthetic events are pooled for performance
+    // Event properties are nullified after callback
+    function handleClick(e) {
+    console.log(e.type); // 'click'
+    setTimeout(() => {
+    console.log(e.type); // null! (in React 16 and below)
+    }, 0);
     }
+    
+    Event Delegation:
+    • React doesn't attach handlers to individual nodes
+    • Single event listener at root (React 17+ changed this)
+    • Events bubble through React's synthetic system
+    
+    Consistent API:
+    • Same event names across browsers
+    • Normalized event properties
+    • Automatic memory management
+    
+    Performance:
+    • Fewer event listeners
+    • Efficient event delegation
+    • Automatic cleanup
+    
+    Event Names in React:
+    • onClick (not onclick)
+    • onChange (triggers on each keystroke)
+    • onSubmit
+    • onMouseEnter, onMouseLeave`,
+      },
+    ],
+  },
+  {
+    title: 'React JSX, Babel, React Components & Props Explained from Scratch',
+    link: 'https://www.notion.so/Lecture-02-JSX-Babel-props-and-React-Component-2b13a78e0e22804797a1ef605cb2d3fb',
+    questions: [
+      {
+        question: 'What is JSX in React and why is it used?',
+        answer:
+          'JSX is JavaScript XML syntax extension that allows writing HTML-like code in JavaScript. Used for creating React elements in readable format.',
+      },
+      {
+        question: 'How does Babel transform JSX code?',
+        answer:
+          'Babel converts JSX to React.createElement() calls. Transpiles modern JavaScript/JSX to browser-compatible ES5 code.',
+      },
+      {
+        question: 'What are React Components?',
+        answer:
+          'Reusable UI building blocks. Can be functional (with hooks) or class-based. Encapsulate logic, state, and rendering.',
+      },
+      {
+        question: 'What are Props in React?',
+        answer:
+          'Properties passed from parent to child components. Read-only data that configures child components.',
+      },
+      {
+        question: "What's the difference between Props and State?",
+        answer:
+          'Props: external data from parent (immutable). State: internal data managed by component (mutable).',
+      },
+      {
+        question: "Why can't browsers read JSX directly?",
+        answer:
+          'Browsers only understand JavaScript. JSX is syntactic sugar that must be transpiled to React.createElement() calls.',
+      },
+      {
+        question: 'What are PropTypes and why use them?',
+        answer:
+          'Type checking for React props. Catches bugs early, documents component API, improves development experience.',
+      },
+      {
+        question: 'How do you create a React component?',
+        answer:
+          'Functional: function Component(props). Class: class Component extends React.Component. Use arrow functions for methods.',
+      },
+      {
+        question: 'What is component composition in React?',
+        answer:
+          'Building complex UIs by combining smaller components. Pass components as props or children.',
+      },
+      {
+        question: 'How do you pass data between components?',
+        answer:
+          'Parent to child: via props. Child to parent: callback functions. Sibling components: lift state up to common parent.',
+      },
+    ],
+  },
+  {
+    title:
+      'React + Vite Complete Setup and Deployment | npm, Plugins, node, Bundlers',
+    link: 'https://www.notion.so/Lecture-03-Introduction-to-Vite-2b33a78e0e228056a899c8eafdf55107',
+    questions: [
+      {
+        question: 'What is Vite and how is it different from Create React App?',
+        answer:
+          'Next-generation build tool vs. zero-config setup. Vite uses native ES modules for faster dev server and builds.',
+      },
+      {
+        question: 'How do you create a React app with Vite?',
+        answer:
+          'npm create vite@latest, select React template, install dependencies with npm install, run dev server.',
+      },
+      {
+        question:
+          'What are the main configuration files in a Vite React project?',
+        answer:
+          'package.json: dependencies and scripts. vite.config.js: Vite configuration. index.html: entry point.',
+      },
+      {
+        question: 'How does Vite handle development and production builds?',
+        answer:
+          'Dev: uses native ES modules for instant startup. Production: bundles with Rollup for optimized output.',
+      },
+      {
+        question: 'What are Vite plugins and how are they used?',
+        answer:
+          'Extensions for Vite functionality. Install via npm, add to vite.config.js plugins array. Examples: @vitejs/plugin-react.',
+      },
+      {
+        question: 'How do you deploy a Vite React application?',
+        answer:
+          'Build with npm run build, deploy dist folder to static hosting: Vercel, Netlify, GitHub Pages, or traditional hosting.',
+      },
+      {
+        question: 'What is Hot Module Replacement in Vite?',
+        answer:
+          'Updates modules without full page reload during development. Preserves application state while updating code.',
+      },
+      {
+        question: 'How do you add environment variables in Vite?',
+        answer:
+          'Create .env files (.env, .env.local, .env.production). Variables prefixed with VITE_ are exposed to client code.',
+      },
+      {
+        question: 'What is tree shaking in Vite/Rollup?',
+        answer:
+          'Dead code elimination during build. Removes unused code from final bundle, reducing file size.',
+      },
+      {
+        question: 'How do you configure paths/aliases in Vite?',
+        answer:
+          "In vite.config.js: resolve.alias for path mappings. Example: '@': path.resolve(__dirname, './src').",
+      },
+    ],
+  },
+  {
+    title: 'What is hooks and useState hook',
+    link: 'https://www.notion.so/Lecture-04-useState-Hook-2b83a78e0e228082aa6ef6bd539a9f32',
+    questions: [
+      {
+        question: 'What are React Hooks?',
+        answer:
+          'Functions that let you use state and lifecycle features in functional components. Introduced in React 16.8.',
+      },
+      {
+        question: 'What is the useState hook?',
+        answer:
+          'Hook that adds state to functional components. Returns array with state variable and setter function.',
+      },
+      {
+        question: 'How do you use useState hook?',
+        answer:
+          "Import: import { useState } from 'react'. Use: const [state, setState] = useState(initialValue).",
+      },
+      {
+        question: 'What are the rules of using hooks?',
+        answer:
+          'Only call hooks at top level of components. Only call from React functions. Use same order every render.',
+      },
+      {
+        question: 'How does useState differ from this.setState?',
+        answer:
+          'useState: functional components, replaces state entirely (unless merging manually). setState: class components, auto-merges state.',
+      },
+      {
+        question: 'Can you use multiple useState hooks in one component?',
+        answer:
+          'Yes, multiple useState calls for different state variables. Each manages independent piece of state.',
+      },
+      {
+        question: 'How do you update objects/arrays with useState?',
+        answer:
+          "Create new object/array, use spread operator: setUser({...user, name: 'John'}).",
+      },
+      {
+        question: 'What is the initial value in useState?',
+        answer:
+          'Value passed to useState(initialValue). Can be primitive, object, array, or function (lazy initialization).',
+      },
+      {
+        question: 'How do you handle previous state with useState?',
+        answer:
+          'Use functional update: setCount(prev => prev + 1). Ensures updates based on latest state.',
+      },
+      {
+        question: 'What is lazy initialization in useState?',
+        answer:
+          'Passing function to useState(() => expensiveComputation()). Function runs only on initial render.',
+      },
+    ],
+  },
+  {
+    title: 'useEffect Hook in React',
+    link: 'https://www.notion.so/Lecture05-useEffect-Hook-2bd3a78e0e228000a7a0f4f80a1cc793',
+    questions: [
+      {
+        question: 'What is the useEffect hook?',
+        answer:
+          'Hook that performs side effects in functional components. Replaces lifecycle methods: componentDidMount, componentDidUpdate, componentWillUnmount.',
+      },
+      {
+        question: 'What are the common use cases for useEffect?',
+        answer:
+          'Data fetching, subscriptions, DOM manipulation, timers, and any operation that interacts with the outside world.',
+      },
+      {
+        question: 'What is the basic syntax of useEffect?',
+        answer:
+          'useEffect(() => { effect }, [dependencies]). First param: function with effect logic. Second param: dependency array.',
+      },
+      {
+        question: 'What does the dependency array control?',
+        answer:
+          'When effect runs: []: once on mount. [dep1, dep2]: when dependencies change. No array: on every render.',
+      },
+      {
+        question: 'How do you clean up effects in useEffect?',
+        answer:
+          'Return cleanup function from effect: useEffect(() => { const sub = subscribe(); return () => unsubscribe(); }, []).',
+      },
+      {
+        question: 'When does cleanup function run?',
+        answer:
+          'Before effect runs again (except initial run) and when component unmounts. Prevents memory leaks.',
+      },
+      {
+        question: 'How does useEffect differ from lifecycle methods?',
+        answer:
+          'useEffect combines multiple lifecycle methods. Runs after render (including paint). Can handle mounting, updating, unmounting.',
+      },
+      {
+        question:
+          'What is the difference between useEffect and useLayoutEffect?',
+        answer:
+          'useEffect: runs after render is committed to screen. useLayoutEffect: runs before paint, can cause visual flicker if blocking.',
+      },
+      {
+        question: 'How do you handle async operations in useEffect?',
+        answer:
+          'Create async function inside useEffect and call it: useEffect(() => { async function fetchData() {} fetchData(); }, []).',
+      },
+      {
+        question: 'What are common mistakes with useEffect?',
+        answer:
+          'Missing dependencies, infinite loops from state updates without dependencies, not cleaning up subscriptions, async functions directly as effect.',
+      },
+    ],
+  },
+  {
+    title:
+      'How React works under the Hood | React reconciliation, fibre, diffing, key',
+    link: 'https://www.notion.so/Lecture06-React-Virtual-DOM-Reconciliation-Complete-Study-Notes-2c43a78e0e228052ad82e4899bf42cb4',
+    questions: [
+      {
+        question: 'What is React Reconciliation?',
+        answer:
+          'Process of updating DOM efficiently. Compares new Virtual DOM with previous, calculates minimal changes, applies updates.',
+      },
+      {
+        question: 'What is the Virtual DOM?',
+        answer:
+          'Lightweight JavaScript representation of actual DOM. Enables efficient updates by minimizing direct DOM manipulation.',
+      },
+      {
+        question: 'What is React Fiber?',
+        answer:
+          'Complete rewrite of React core algorithm (React 16+). Enables incremental rendering, prioritization, and better performance.',
+      },
+      {
+        question: "How does React's diffing algorithm work?",
+        answer:
+          'Compares tree nodes level by level. O(n) complexity. Assumptions: different element types produce different trees, keys identify stable elements.',
+      },
+      {
+        question: 'Why are keys important in React lists?',
+        answer:
+          'Help React identify which items changed, added, or removed. Should be stable, unique among siblings, preferably IDs not indexes.',
+      },
+      {
+        question: 'What are the three phases of React Fiber?',
+        answer:
+          'Render/reconciliation: creates work-in-progress tree. Pre-commit: runs lifecycle methods. Commit: applies changes to DOM.',
+      },
+      {
+        question: 'How does React handle element type changes?',
+        answer:
+          'Different types at same position cause complete subtree unmount and remount. Example: <div> to <span> rebuilds entire subtree.',
+      },
+      {
+        question: 'What is the purpose of React keys?',
+        answer:
+          'Provide stable identity for list items during re-renders. Prevent unnecessary re-renders and preserve component state.',
+      },
+      {
+        question: 'What are the limitations of using index as key?',
+        answer:
+          'Causes issues when list order changes (reorders, inserts, deletions). Items lose state, performance degradation, unexpected behavior.',
+      },
+      {
+        question: 'How does React batch updates?',
+        answer:
+          'Groups multiple state updates into single re-render. In React 17+: automatic batching in most handlers. React 18: automatic batching everywhere.',
+      },
+    ],
+  },
+  {
+    title: 'React Memo, useMemo and useCallback Hook in React',
+    link: 'https://www.notion.so/Lecture07-React-memo-useMemo-useCallback-2ce3a78e0e2280b69d97f561779b69c8',
+    questions: [
+      {
+        question: 'What is React.memo()?',
+        answer:
+          "Higher Order Component that memoizes functional components. Prevents re-renders when props haven't changed (shallow comparison).",
+      },
+      {
+        question: 'What is the useMemo hook?',
+        answer:
+          'Memoizes expensive computations. Returns memoized value, only recalculates when dependencies change.',
+      },
+      {
+        question: 'What is the useCallback hook?',
+        answer:
+          'Memoizes functions. Returns memoized callback, only recreates when dependencies change.',
+      },
+      {
+        question: 'When should you use React.memo?',
+        answer:
+          'For components that render often with same props, expensive to render, or when parent re-renders unnecessarily.',
+      },
+      {
+        question: 'When should you use useMemo?',
+        answer:
+          'For expensive calculations, derived state, or preventing unnecessary re-computations in renders.',
+      },
+      {
+        question: 'When should you use useCallback?',
+        answer:
+          'When passing callbacks to optimized child components, or when function identity matters for effects/dependencies.',
+      },
+      {
+        question: "What's the difference between useMemo and useCallback?",
+        answer:
+          'useMemo: memoizes values/results. useCallback: memoizes functions themselves.',
+      },
+      {
+        question: 'How do you customize comparison in React.memo?',
+        answer:
+          'Pass second argument: arePropsEqual function. Compares previous and next props, returns true if equal.',
+      },
+      {
+        question:
+          'What are the performance implications of overusing memoization?',
+        answer:
+          'Memory overhead, complexity, premature optimization. Only use when measurable performance benefits.',
+      },
+      {
+        question: 'How do useMemo and useCallback affect dependency arrays?',
+        answer:
+          'Stabilize values/functions, preventing infinite loops in useEffect/useMemo/useCallback dependencies.',
+      },
+    ],
+  },
+  {
+    title: 'useRef Hook in React JS',
+    link: 'https://www.notion.so/Lecture08-useRef-Hook-2d63a78e0e2280d5acd2c23ad28b9bee',
+    questions: [
+      {
+        question: 'What is the useRef hook?',
+        answer:
+          'Hook that creates mutable reference object with .current property. Persists across re-renders without causing re-renders.',
+      },
+      {
+        question: 'What are the main use cases for useRef?',
+        answer:
+          "Accessing DOM elements, storing mutable values that don't trigger re-renders, keeping previous state values.",
+      },
+      {
+        question: 'How do you access DOM elements with useRef?',
+        answer:
+          'Create ref: const inputRef = useRef(null). Attach to element: <input ref={inputRef}>. Access: inputRef.current.focus().',
+      },
+      {
+        question: 'How does useRef differ from useState?',
+        answer:
+          "useRef: mutable, changes don't trigger re-render, .current property. useState: immutable via setter, changes trigger re-render.",
+      },
+      {
+        question: 'Can useRef store values other than DOM references?',
+        answer:
+          'Yes, any mutable value: interval IDs, previous props/state, counters, or any persistent data across renders.',
+      },
+      {
+        question: 'How do you use useRef to track previous values?',
+        answer:
+          'Use useEffect to update ref after render: useEffect(() => { prevRef.current = value; }, [value]);',
+      },
+      {
+        question: 'What is the lifetime of a useRef value?',
+        answer:
+          'Persists for full component lifetime. Created on initial render, exists until component unmounts.',
+      },
+      {
+        question: "Why doesn't changing useRef.current cause re-render?",
+        answer:
+          "useRef returns plain JavaScript object. React doesn't track .current property changes for re-renders.",
+      },
+      {
+        question: 'How do you use multiple refs in a component?',
+        answer:
+          'Create separate useRef calls for each ref needed. Example: const inputRef = useRef(); const divRef = useRef();',
+      },
+      {
+        question: 'What are the common mistakes with useRef?',
+        answer:
+          'Accessing ref before attachment (null), using for state that should trigger re-render, mutating during render.',
+      },
+    ],
+  },
 ];
 
 // Combine all data
 const LEARNING_DATA = {
-    javascript: JS_TOPICS,
-    react: REACT_TOPICS
+  javascript: JS_TOPICS,
+  react: REACT_TOPICS,
 };
