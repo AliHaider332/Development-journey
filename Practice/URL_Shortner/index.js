@@ -14,7 +14,7 @@ app.set('views', './views'); // optional but recommended
 
 /* ---------- MongoDB Connection ---------- */
 mongoose
-  .connect('mongodb+srv://abc:abc@demo.cf3vm4p.mongodb.net/url_shortner')
+  .connect('')
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.log(err));
 

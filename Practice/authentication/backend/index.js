@@ -21,7 +21,7 @@ app.use(
 app.use('/api', userRoutes);
 app.use('/api', authenticateUser, taskRouter);
 mongoose
-  .connect('mongodb+srv://abc:abc@demo.cf3vm4p.mongodb.net/authentication')
+  .connect('')
   .then(() => console.log('DB Connected'))
   .catch((err) => console.error(`Something went wrong: ${err}`));
 

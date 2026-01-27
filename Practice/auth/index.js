@@ -19,7 +19,7 @@ app.set('views', './views');
 
 // ✅ Connect to MongoDB
 mongoose
-  .connect('mongodb+srv://abc:abc@demo.cf3vm4p.mongodb.net/auth')
+  .connect('')
   .then(() => console.log('DB Connected'))
   .catch((err) => console.error(`Something went wrong: ${err}`));
 
