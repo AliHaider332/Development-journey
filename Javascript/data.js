@@ -1268,196 +1268,169 @@ const JS_TOPICS = [
 const REACT_TOPICS = [
   {
     title: 'React Fundamentals',
-    link: '#',
+    link: 'https://www.notion.so/Lecture-01-Introduction-To-React-2b03a78e0e2280c6b345f2ee06dc25de',
     questions: [
       {
-        question: 'What is React and how is it implemented in JavaScript?',
-        answer: `React is a declarative, component-based JavaScript library for building user interfaces.
-    
-    Core Implementation Concepts:
-    
-    Virtual DOM:
-    • React creates a lightweight representation of the actual DOM
-    • Updates to state/props trigger re-renders
-    • React diffs the Virtual DOM with previous version
-    • Only applies minimal necessary changes to real DOM
-    
-    JSX to JavaScript Transformation:
-    // JSX:
-    const element = <h1 className="title">Hello World</h1>;
-    
-    // Transpiled to:
-    const element = React.createElement(
-    'h1',
-    {className: 'title'},
-    'Hello World'
-    );
-    
-    Component Reconciliation:
-    • React maintains a tree of component instances
-    • Each component has lifecycle methods/hooks
-    • Efficient diffing algorithm (O(n) complexity)
-    
-    One-Way Data Flow:
-    • Data flows from parent to child via props
-    • State changes trigger re-renders
-    • Unidirectional data flow simplifies debugging
-    
-    Key Implementation Details:
-    • Uses requestIdleCallback for scheduling
-    • Batched updates for performance
-    • Synthetic events for cross-browser compatibility
-    • Fiber architecture for incremental rendering}, { question: "What is the Virtual DOM and how does it work?", answer:Virtual DOM is a programming concept where an ideal/virtual representation of UI is kept in memory.
-    
-    How it works:
-    
-    Initial Render:
-    • React creates Virtual DOM tree from components
-    • Renders this to actual DOM
-    
-    On State Change:
-    • React creates new Virtual DOM tree
-    • Compares with previous (diffing algorithm)
-    • Calculates minimal set of DOM operations
-    • Batch updates real DOM
-    
-    Example Flow:
-    // Initial state
-    const vdom1 = {
-    type: 'div',
-    props: { className: 'container' },
-    children: [{ type: 'p', children: 'Hello' }]
-    };
-    
-    // After state change
-    const vdom2 = {
-    type: 'div',
-    props: { className: 'container active' },
-    children: [{ type: 'p', children: 'Hello World' }]
-    };
-    
-    // React will only:
-    
-    Update className from 'container' to 'container active'
-    
-    Update text content from 'Hello' to 'Hello World'
-    
-    Benefits:
-    • Performance optimization
-    • Declarative programming model
-    • Abstracts away direct DOM manipulation}, { question: "What are React Components and how do they differ from regular HTML elements?", answer:React Components are reusable, self-contained UI pieces with their own logic and appearance.
-    
-    Class Component Example:
-    class Button extends React.Component {
-    constructor(props) {
-    super(props);
-    this.state = { clicked: false };
+        question: 'What is React and why is it used?',
+        answer: `React is a JavaScript library for building user interfaces using a declarative and component-based approach.
+  
+  Key reasons to use React:
+  • Reusable components
+  • Efficient updates using Virtual DOM
+  • One-way data flow
+  • Large ecosystem and community
+  • Works across platforms (web, mobile, VR, PDF)
+  
+  React focuses only on the UI layer and can be integrated with other libraries easily.`,
+      },
+      {
+        question:
+          'What problem does React solve compared to vanilla JavaScript?',
+        answer: `Without React, creating UI using JavaScript requires:
+  • document.createElement
+  • setting styles manually
+  • appending elements to DOM
+  • repetitive and error-prone code
+  
+  Problems:
+  • Hard to maintain
+  • Not reusable
+  • Messy logic and UI mixed together
+  
+  React solves this by:
+  • Providing declarative UI
+  • Using components
+  • Abstracting DOM manipulation
+  • Making UI predictable and reusable`,
+      },
+      {
+        question: 'What is React.createElement and what does it return?',
+        answer: `React.createElement does NOT create real DOM elements.
+  It returns a plain JavaScript object called Virtual DOM.
+  
+  Example:
+  const element = React.createElement('h1', { id: 'title' }, 'Hello');
+  
+  Returned object:
+  {
+    type: 'h1',
+    props: {
+      id: 'title',
+      children: 'Hello'
     }
-    
-    text
-    handleClick = () => {
-        this.setState({ clicked: true });
-    };
-    
-    render() {
-        return (
-            <button 
-                onClick={this.handleClick}
-                className={this.state.clicked ? 'active' : ''}
-            >
-                {this.props.text}
-            </button>
-        );
-    }
-    }
-    
-    Functional Component Example (with Hooks):
-    function Counter() {
-    const [count, setCount] = useState(0);
-    
-    text
-    const increment = () => setCount(count + 1);
-    
-    return (
-        <div>
-            <p>Count: {count}</p>
-            <button onClick={increment}>Increment</button>
-        </div>
-    );
-    }
-    
-    Key Differences from HTML elements:
-    • Have state and lifecycle
-    • Can contain business logic
-    • Reusable with different props
-    • Can manage their own behavior
-    • Encapsulate styling and functionality
-    
-    Usage:
-    <Button text="Click Me" />
-    <Counter />
-    <Welcome name="John" />
-    
-    React components ultimately render to regular HTML elements but with enhanced capabilities.}, { question: "How does React handle events differently from vanilla JavaScript?", answer:React uses Synthetic Events - a cross-browser wrapper around native browser events.
-    
-    Vanilla JavaScript Event Handling:
-    document.getElementById('btn').addEventListener('click', (e) => {
-    console.log(e.target.value);
-    e.preventDefault();
-    });
-    
-    React Event Handling:
-    function Form() {
-    const handleSubmit = (e) => {
-    e.preventDefault(); // Synthetic Event
-    console.log('Form submitted');
-    };
-    
-    text
-    const handleChange = (e) => {
-        console.log(e.target.value);  // Cross-browser compatible
-    };
-    
-    return (
-        <form onSubmit={handleSubmit}>
-            <input onChange={handleChange} />
-            <button type="submit">Submit</button>
-        </form>
-    );
-    }
-    
-    Key Differences:
-    
-    Event Pooling:
-    // Synthetic events are pooled for performance
-    // Event properties are nullified after callback
-    function handleClick(e) {
-    console.log(e.type); // 'click'
-    setTimeout(() => {
-    console.log(e.type); // null! (in React 16 and below)
-    }, 0);
-    }
-    
-    Event Delegation:
-    • React doesn't attach handlers to individual nodes
-    • Single event listener at root (React 17+ changed this)
-    • Events bubble through React's synthetic system
-    
-    Consistent API:
-    • Same event names across browsers
-    • Normalized event properties
-    • Automatic memory management
-    
-    Performance:
-    • Fewer event listeners
-    • Efficient event delegation
-    • Automatic cleanup
-    
-    Event Names in React:
-    • onClick (not onclick)
-    • onChange (triggers on each keystroke)
-    • onSubmit
-    • onMouseEnter, onMouseLeave`,
+  }
+  
+  This object is a description of what UI should look like, not the actual DOM.`,
+      },
+      {
+        question: 'What is Virtual DOM?',
+        answer: `Virtual DOM is a lightweight JavaScript representation of the real DOM.
+  
+  How it works:
+  • React creates a Virtual DOM tree
+  • On state/props change, creates a new tree
+  • Compares old and new trees (diffing)
+  • Finds minimal changes
+  • Updates only changed parts in real DOM
+  
+  Benefits:
+  • Faster updates
+  • Better performance
+  • Declarative UI
+  • Less direct DOM manipulation`,
+      },
+      {
+        question: 'What is the role of ReactDOM?',
+        answer: `ReactDOM converts Virtual DOM objects into real DOM elements for the browser.
+  
+  Flow:
+  React.createElement() → Virtual DOM (JS Object)
+  ReactDOM.render() → Real DOM (HTML elements)
+  
+  ReactDOM is platform-specific renderer for the web, while React itself is platform-agnostic.`,
+      },
+      {
+        question: 'Why are React and ReactDOM separate libraries?',
+        answer: `Because React is platform-agnostic and ReactDOM is platform-specific.
+  
+  React:
+  • Creates Virtual DOM
+  • Describes UI
+  
+  Renderers:
+  • ReactDOM → Browser
+  • React Native → Mobile
+  • React PDF → PDF
+  • React VR → VR
+  
+  Same Virtual DOM can be rendered on different platforms using different renderers.`,
+      },
+      {
+        question: 'What are React Components?',
+        answer: `React components are reusable UI building blocks with their own logic and state.
+  
+  Types:
+  • Functional Components
+  • Class Components
+  
+  Features:
+  • Can accept props
+  • Can manage state
+  • Can contain logic
+  • Can be reused
+  • Encapsulate UI + behavior
+  
+  Example:
+  function Button() {
+    return <button>Click</button>;
+  }`,
+      },
+      {
+        question: 'How does React handle events differently from JavaScript?',
+        answer: `React uses Synthetic Events instead of native browser events.
+  
+  Differences:
+  • Cross-browser compatible
+  • Consistent API
+  • Event delegation
+  • Better performance
+  
+  Example:
+  <button onClick={handleClick}>Click</button>
+  
+  instead of:
+  button.addEventListener('click', handler)
+  
+  React normalizes events and manages them efficiently.`,
+      },
+      {
+        question: 'What is reconciliation in React?',
+        answer: `Reconciliation is the process of comparing old Virtual DOM with new Virtual DOM.
+  
+  Steps:
+  • Create new Virtual DOM tree
+  • Compare with previous tree
+  • Find differences (diffing)
+  • Update only changed nodes in real DOM
+  
+  This makes React fast and efficient.`,
+      },
+      {
+        question: 'What is createRoot in React 18 and why was it introduced?',
+        answer: `React 18 introduced createRoot to separate setup from rendering.
+  
+  Old way:
+  ReactDOM.render(<App />, root);
+  
+  New way:
+  const root = ReactDOM.createRoot(container);
+  root.render(<App />);
+  
+  Benefits:
+  • Better performance
+  • Supports concurrent rendering
+  • Clean separation between initialization and rendering
+  • More scalable architecture`,
       },
     ],
   },
