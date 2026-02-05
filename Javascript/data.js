@@ -1831,6 +1831,196 @@ const REACT_TOPICS = [
       },
     ],
   },
+  {
+    title: 'React Hook Form + Zod Validation',
+    link: 'https://www.notion.so/Lecture-09-2fed23fb2a6c80f3b2cffb7100a37ec5',
+    questions: [
+      {
+        question: 'What is React Hook Form?',
+        answer:
+          'A library for handling forms in React using uncontrolled components and refs, providing better performance and easy validation.',
+      },
+      {
+        question: 'What is the purpose of register in React Hook Form?',
+        answer:
+          'register connects an input field to the form state and tracks its value using refs without causing re-renders.',
+      },
+      {
+        question: 'What does handleSubmit do?',
+        answer:
+          'handleSubmit collects all registered input values, runs validation, and calls the submit function if the data is valid.',
+      },
+      {
+        question: 'What is Zod?',
+        answer:
+          'Zod is a schema validation library used to define rules and structure for form data such as required fields, type checks, and custom validations.',
+      },
+      {
+        question: 'What is zodResolver?',
+        answer:
+          'zodResolver connects Zod with React Hook Form so that form data is validated using the Zod schema when handleSubmit is called.',
+      },
+      {
+        question: 'Why must schema keys match register keys?',
+        answer:
+          'Because React Hook Form creates an object using register keys and Zod validates based on schema keys. If they do not match, validation will fail or errors will not show correctly.',
+      },
+      {
+        question:
+          'What happens if a key mismatches between schema and register?',
+        answer:
+          'The field will not be validated correctly and the error message may not appear on the correct input or may not appear at all.',
+      },
+      {
+        question: 'What is the errors object in React Hook Form?',
+        answer:
+          'errors contains validation error messages for each field that violates schema rules and is used to display feedback in the UI.',
+      },
+      {
+        question: 'How do you make a field required using Zod?',
+        answer:
+          'By default z.string() is required. Custom required message can be added using z.string({ required_error: "Field is required" }).',
+      },
+      {
+        question: 'What is refine in Zod?',
+        answer:
+          'refine is used for cross-field validation, such as checking if Password and Confirm Password match.',
+      },
+      {
+        question:
+          'What is the difference between controlled and uncontrolled inputs?',
+        answer:
+          'Controlled inputs use useState and re-render on every change, while uncontrolled inputs use refs and are faster with fewer re-renders.',
+      },
+      {
+        question:
+          'Why is React Hook Form faster than traditional form handling?',
+        answer:
+          'Because it uses uncontrolled components and refs instead of state updates on every keystroke, reducing unnecessary re-renders.',
+      },
+      {
+        question:
+          'What is the validation flow when using Zod with React Hook Form?',
+        answer:
+          'User enters data → register stores values → handleSubmit runs → Zod validates data → errors object is created or data is submitted.',
+      },
+      {
+        question: 'Can Zod replace HTML required attribute?',
+        answer:
+          'Yes, Zod handles required validation and provides better control and custom error messages compared to HTML required.',
+      },
+      {
+        question: 'What is the best practice for form validation?',
+        answer:
+          'Keep validation logic in Zod schema, match keys correctly, show error messages from errors object, and always validate again on backend.',
+      },
+    ],
+  },
+  {
+    title: 'useContext Hook in React JS',
+    link: 'https://www.notion.so/Lecture10-useContext-Hook-2f9a9af81c9880819a32ddd34cd099c0',
+    questions: [
+      {
+        question: 'What is Context in React?',
+        answer:
+          'Context is a way to share data globally between components without passing props manually at every level (solves prop drilling problem).',
+      },
+      {
+        question: 'What problem does Context solve?',
+        answer:
+          'It solves the prop drilling problem where props must be passed through intermediate components that do not need the data.',
+      },
+      {
+        question: 'What is prop drilling?',
+        answer:
+          'Prop drilling is the process of passing props through multiple nested components just to reach a deeply nested component that actually needs the data.',
+      },
+      {
+        question: 'What is state lifting?',
+        answer:
+          'State lifting means moving shared state to the lowest common ancestor component so that multiple sibling components can access it via props or context.',
+      },
+      {
+        question: 'How do you create a context in React?',
+        answer: 'By using createContext(): const MyContext = createContext();',
+      },
+      {
+        question: 'How do you provide context to components?',
+        answer:
+          'By wrapping components with a Context Provider and passing a value prop that contains the shared data.',
+      },
+      {
+        question: 'How do you consume context in a component?',
+        answer:
+          'By using the useContext hook: const value = useContext(MyContext);',
+      },
+      {
+        question: 'What can be stored inside Context value?',
+        answer:
+          'Primitives, objects, state values, setter functions, custom functions, and computed values can all be stored in context.',
+      },
+      {
+        question: 'How does Context work internally (mental model)?',
+        answer:
+          'Provider broadcasts data like WiFi and any component using useContext can directly read it without passing through intermediate components.',
+      },
+      {
+        question: 'What happens when context value changes?',
+        answer:
+          'Only components that use useContext will re-render when the context value changes, not intermediate components.',
+      },
+      {
+        question: 'Why should useMemo be used with Context value?',
+        answer:
+          'To prevent creating a new object on every render which would cause unnecessary re-renders of all consuming components.',
+      },
+      {
+        question: 'What is the difference between props and context?',
+        answer:
+          'Props pass data from parent to child step by step, while context provides a direct channel from Provider to any consuming component.',
+      },
+      {
+        question: 'When should Context be used?',
+        answer:
+          'Context should be used for truly global or shared state such as theme, authentication, language, or shopping cart data.',
+      },
+      {
+        question: 'When should Context not be used?',
+        answer:
+          'Context should not be used for frequently changing local state like form inputs or animations because it can cause unnecessary re-renders.',
+      },
+      {
+        question: 'What is the Provider component in Context?',
+        answer:
+          'The Provider is the component that supplies the context value to all child components.',
+      },
+      {
+        question: 'What is useContext hook?',
+        answer:
+          'useContext is a React hook that allows a component to read and subscribe to context values from the nearest Provider.',
+      },
+      {
+        question: 'What is a common mistake when using Context?',
+        answer:
+          'Passing new object values without memoization and using Context for state that should remain local to a component.',
+      },
+      {
+        question: 'How does Context reduce unnecessary prop passing?',
+        answer:
+          'It allows any component to access shared data directly without intermediate components needing to receive and forward props.',
+      },
+      {
+        question: 'Give a real-world example of Context usage.',
+        answer:
+          'Theme management (dark/light mode), authentication user data, shopping cart state, or language selection.',
+      },
+      {
+        question: 'What is the main limitation of Context?',
+        answer:
+          'All consuming components re-render when the context value changes, so it should be used carefully with memoization.',
+      },
+    ],
+  },
 ];
 
 // Combine all data
