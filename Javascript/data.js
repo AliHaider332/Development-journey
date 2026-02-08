@@ -2021,6 +2021,103 @@ const REACT_TOPICS = [
       },
     ],
   },
+  {
+    title: 'Axios in React JS',
+    link: 'https://drive.google.com/file/d/15tMIRoC7Uzr-Od7lq8bYZ4RrJYX1XxPE/view', // Update this link later
+    questions: [
+      {
+        question: 'What is Axios?',
+        answer:
+          'Axios is a promise-based HTTP client for the browser and Node.js that makes it easier to send asynchronous HTTP requests to REST endpoints and perform CRUD operations.',
+      },
+      {
+        question: 'How do you install Axios in a React project?',
+        answer:
+          'Run `npm install axios` or `yarn add axios` in your project directory.',
+      },
+      {
+        question: 'How do you make a GET request using Axios?',
+        answer:
+          'Use `axios.get(url).then(response => { /* handle data */ }).catch(error => { /* handle error */ });`',
+      },
+      {
+        question: 'How do you make a POST request using Axios?',
+        answer:
+          'Use `axios.post(url, data).then(response => { /* handle data */ }).catch(error => { /* handle error */ });`',
+      },
+      {
+        question: 'How do you send headers in Axios?',
+        answer:
+          'You can pass headers as the third argument in `axios.post(url, data, { headers: { "Authorization": "Bearer token" } })`.',
+      },
+      {
+        question: 'How do you handle errors in Axios?',
+        answer:
+          'Use `.catch(error => { ... })` on the promise or try/catch with async/await. The `error` object contains information like `error.response`, `error.request`, and `error.message`.',
+      },
+      {
+        question: 'How do you use Axios with async/await?',
+        answer:
+          'Wrap Axios calls in an async function and use `const response = await axios.get(url)` with try/catch for error handling.',
+      },
+      {
+        question: 'What is the difference between Axios and fetch API?',
+        answer:
+          'Axios automatically parses JSON responses, supports request/response interceptors, handles timeouts, and works in Node.js, while fetch requires manual JSON parsing and less built-in features.',
+      },
+      {
+        question: 'How do you cancel a request in Axios?',
+        answer:
+          'Use `AbortController` or `axios.CancelToken` (deprecated) to cancel requests if needed.',
+      },
+      {
+        question: 'How do you set a default base URL in Axios?',
+        answer:
+          'Create an Axios instance with `axios.create({ baseURL: "https://api.example.com" })` and use that instance for requests.',
+      },
+      {
+        question: 'What are Axios interceptors?',
+        answer:
+          'Interceptors allow you to run code before a request is sent or after a response is received, useful for adding auth tokens or logging.',
+      },
+      {
+        question: 'Can you send query parameters in Axios?',
+        answer:
+          'Yes, use the `params` property: `axios.get(url, { params: { key: "value" } })`.',
+      },
+      {
+        question:
+          'How do you handle multiple requests simultaneously in Axios?',
+        answer:
+          'Use `axios.all([request1, request2]).then(axios.spread((res1, res2) => { ... }))` or `Promise.all`.',
+      },
+      {
+        question: 'How do you set a timeout in Axios?',
+        answer:
+          'Use the `timeout` option: `axios.get(url, { timeout: 5000 })`.',
+      },
+      {
+        question: 'How do you upload files using Axios?',
+        answer:
+          'Use FormData and set `Content-Type` header to `multipart/form-data`: `axios.post(url, formData, { headers: { "Content-Type": "multipart/form-data" } })`.',
+      },
+      {
+        question: 'How do you handle authentication with Axios?',
+        answer:
+          'Send tokens in headers (Authorization), or configure interceptors to attach tokens automatically for each request.',
+      },
+      {
+        question: 'How do you create an Axios instance?',
+        answer:
+          'Use `const instance = axios.create({ baseURL: "https://api.example.com", headers: { ... } })` for reusable configurations.',
+      },
+      {
+        question: 'How do you handle global errors with Axios?',
+        answer:
+          'Use response interceptors to catch errors centrally instead of handling them in each request individually.',
+      },
+    ],
+  },
 ];
 
 // Combine all data
