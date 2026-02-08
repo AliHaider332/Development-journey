@@ -2118,6 +2118,101 @@ const REACT_TOPICS = [
       },
     ],
   },
+  {
+    title: 'React Routing & React Router DOM (Old & New Syntax)',
+    link: 'https://drive.google.com/file/d/1Q-xg4RVeLIK6-YNCySOINNkHa-ym9GST/view', // Update this link later
+    questions: [
+      {
+        question: 'What is React Routing?',
+        answer:
+          'React Routing allows navigation between different components/pages in a React application without reloading the page, creating a Single Page Application (SPA).',
+      },
+      {
+        question: 'What is React Router DOM?',
+        answer:
+          'React Router DOM is a library used in React web applications to handle routing and navigation between different components using URLs.',
+      },
+      {
+        question: 'How do you install React Router DOM?',
+        answer: 'Run `npm install react-router-dom` in your project directory.',
+      },
+      {
+        question: 'What was the old syntax of React Router (v5)?',
+        answer:
+          'The old syntax used `BrowserRouter`, `Switch`, and `Route` with the `component` or `render` prop for routing.',
+      },
+      {
+        question: 'What is the new syntax of React Router (v6)?',
+        answer:
+          'The new syntax uses `BrowserRouter`, `Routes`, and `Route` with the `element` prop instead of `component`.',
+      },
+      {
+        question: 'What is the main difference between old and new syntax?',
+        answer:
+          'In v6, `Switch` is replaced with `Routes`, and `component` prop is replaced with `element`, which accepts JSX.',
+      },
+      {
+        question: 'What is the use of <Routes> component?',
+        answer:
+          '<Routes> replaces <Switch> and renders the first matching route using improved matching logic.',
+      },
+      {
+        question: 'What is dynamic routing?',
+        answer:
+          'Dynamic routing allows passing parameters in the URL using `:id` (for example, `/user/:id`).',
+      },
+      {
+        question: 'What is useParams hook?',
+        answer:
+          'The `useParams` hook is used to access URL parameters inside a component.',
+      },
+      {
+        question: 'What is useNavigate hook?',
+        answer:
+          'The `useNavigate` hook is used to programmatically navigate from one route to another.',
+      },
+      {
+        question: 'What is the difference between Link and NavLink?',
+        answer:
+          'Link is used for navigation, while NavLink provides styling for the active route.',
+      },
+      {
+        question: 'What is nested routing?',
+        answer:
+          'Nested routing allows rendering child routes inside parent routes using the `<Outlet />` component.',
+      },
+      {
+        question: 'How do you create a 404 (Not Found) page in React Router?',
+        answer:
+          'Create a route with path="*" to display a Not Found component for unmatched routes.',
+      },
+      {
+        question: 'What is Outlet in React Router?',
+        answer:
+          'Outlet is used to render child routes inside a parent route component.',
+      },
+      {
+        question: 'What is BrowserRouter?',
+        answer:
+          'BrowserRouter wraps the entire application and enables routing using the HTML5 history API.',
+      },
+      {
+        question: 'How do you pass state while navigating?',
+        answer:
+          'You can pass state using `navigate("/path", { state: data })` in React Router v6.',
+      },
+      {
+        question: 'What is useLocation hook?',
+        answer:
+          'The `useLocation` hook provides access to the current location object including pathname and state.',
+      },
+      {
+        question: 'Why is React Router important?',
+        answer:
+          'It helps build SPA applications with smooth navigation, better user experience, and organized component structure.',
+      },
+    ],
+  },
 ];
 
 // Combine all data
