@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Navigate, NavLink, useNavigate } from 'react-router-dom';
-import About from '../About';
+import About from './About';
 
 const Navbar = () => {
   const navStyle = {
@@ -63,7 +63,7 @@ const Navbar = () => {
         </NavLink>
       ))}
       <NavLink
-        to="/login "
+        to="/login"
         style={({ isActive }) => ({
           ...linkBaseStyle,
           ...(isActive ? activeStyle : {}),
