@@ -2,10 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { COUNTFuction } from './Redux/actions';
 
-const Count = () => {
+const Count = React.memo(() => {
   const dispatcher = useDispatch();
   const state = useSelector((state) => {
-    return state;
+    return state.dummyReducer.count;
   });
   console.log(state, 'Hi I am Count');
   return (
@@ -17,6 +17,6 @@ const Count = () => {
       Count
     </button>
   );
-};
+});
 
 export default Count;

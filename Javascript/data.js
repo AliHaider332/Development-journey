@@ -2213,6 +2213,102 @@ const REACT_TOPICS = [
       },
     ],
   },
+  {
+    title: 'React Redux & Redux (State Management)',
+    link: 'https://drive.google.com/file/d/1ksBVrhwUVAUBAySxw1JZyYeXOrSw3ciE/view', // Update this link later
+    questions: [
+      {
+        question: 'What is Redux?',
+        answer:
+          'Redux is a state management library used to manage and centralize application state in a predictable way.',
+      },
+      {
+        question: 'What is React Redux?',
+        answer:
+          'React Redux is the official binding library that allows React components to interact with the Redux store.',
+      },
+      {
+        question: 'Why do we use Redux?',
+        answer:
+          'Redux is used to manage global state, avoid prop drilling, and make state changes predictable and easier to debug.',
+      },
+      {
+        question: 'What is a Store in Redux?',
+        answer:
+          'The store is a single object that holds the entire state of the application.',
+      },
+      {
+        question: 'What is an Action in Redux?',
+        answer:
+          'An action is a plain JavaScript object that describes what happened using a type and optional payload.',
+      },
+      {
+        question: 'What is a Reducer?',
+        answer:
+          'A reducer is a pure function that takes the current state and an action and returns a new state.',
+      },
+      {
+        question: 'What is dispatch?',
+        answer:
+          'Dispatch is used to send actions from components to the Redux store.',
+      },
+      {
+        question: 'What is combineReducers?',
+        answer:
+          'combineReducers is used to combine multiple reducers into a single root reducer.',
+      },
+      {
+        question: 'What is useSelector hook?',
+        answer:
+          'useSelector is used to read data from the Redux store inside a React component.',
+      },
+      {
+        question: 'What is useDispatch hook?',
+        answer:
+          'useDispatch is used to dispatch actions from React components.',
+      },
+      {
+        question: 'What is Redux Thunk?',
+        answer:
+          'Redux Thunk is middleware that allows writing asynchronous logic such as API calls in Redux actions.',
+      },
+      {
+        question: 'What is middleware in Redux?',
+        answer:
+          'Middleware is used to extend Redux functionality, such as handling async operations or logging.',
+      },
+      {
+        question: 'What is the Redux data flow?',
+        answer:
+          'UI dispatches an action, reducer processes it, store updates the state, and UI re-renders with new data.',
+      },
+      {
+        question: 'What is immutability in Redux?',
+        answer:
+          'Immutability means state should never be modified directly; instead, a new state object must be returned.',
+      },
+      {
+        question: 'What is Redux Toolkit?',
+        answer:
+          'Redux Toolkit is the recommended way to write Redux logic with simpler syntax and built-in best practices.',
+      },
+      {
+        question: 'What is createSlice in Redux Toolkit?',
+        answer:
+          'createSlice is used to create reducers and actions together in a single file.',
+      },
+      {
+        question: 'What is createStore vs configureStore?',
+        answer:
+          'configureStore from Redux Toolkit replaces createStore and provides better defaults and middleware setup.',
+      },
+      {
+        question: 'What problem does Redux solve?',
+        answer:
+          'Redux solves complex state sharing between components and makes debugging easier with a single source of truth.',
+      },
+    ],
+  },
 ];
 
 // Combine all data

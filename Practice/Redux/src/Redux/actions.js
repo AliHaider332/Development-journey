@@ -11,3 +11,10 @@ export const COUNTFuction = (data) => {
     payload: 'ali',
   };
 };
+
+export const IncrementNumber = () => {
+  return {
+    type: 'INCREMENT',
+    payload: '',
+  };
+};

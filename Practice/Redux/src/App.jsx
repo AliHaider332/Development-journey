@@ -1,14 +1,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ADDFuction } from './Redux/actions';
+import { ADDFuction, IncrementNumber } from './Redux/actions';
 import Count from './Count';
 const App = () => {
-  const state = useSelector((state) => {
-    return state.product;
+  const State = useSelector((state) => {
+    return state.tempReducer;
   });
 
   const dispatcher = useDispatch();
-  console.log(state);
+  console.log(State);
   return (
     <>
       <div>App </div>
@@ -18,6 +18,13 @@ const App = () => {
         }}
       >
         Click Me
+      </button>
+      <button
+        onClick={() => {
+          dispatcher(IncrementNumber());
+        }}
+      >
+        INCREMENT
       </button>
       <Count />
     </>
