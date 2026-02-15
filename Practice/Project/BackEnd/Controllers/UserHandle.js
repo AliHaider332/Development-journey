@@ -35,7 +35,7 @@ export const userLogin = async (req, res) => {
       sameSite: 'strict', // Helps prevent CSRF
     });
 
-    return res.status(200).json({ message: 'Success' });
+    return res.status(200).json({ message: 'Success', user: req.user });
   } catch (error) {
     console.log(error);
 
@@ -58,5 +58,14 @@ export const userLogout = async (req, res) => {
     return res.status(500).json({
       message: 'Logout failed',
     });
+  }
+};
+
+export const userAuth = async (req, res) => {
+  try {
+    return res.status(200).json({ message: 'Success', user: req.user });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: 'Internal Server Error' });
   }
 };

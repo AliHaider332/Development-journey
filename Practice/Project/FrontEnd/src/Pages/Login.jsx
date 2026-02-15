@@ -4,8 +4,8 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useDispatch, useSelector } from 'react-redux';
-import { handleAuthentication, handleLoading } from '../Redux/action';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../Store/Feature/Authentication';
 
 const loginSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
@@ -28,9 +28,7 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      dispatcher(handleLoading());
       const URL = 'http://localhost:3000'; // for Vite
-      // console.log(data);
 
       const res = await fetch(`${URL}/logIn`, {
         method: 'POST',
@@ -42,11 +40,10 @@ const Login = () => {
       });
 
       const result = await res.json();
-
       if (res.ok) {
+        dispatcher(setUser(result.user));
         toast.success('Login successfully 🎉');
         navigate('/blogs');
-        dispatcher(handleAuthentication(false));
       } else {
         toast.error(result.message || 'Login failed ❌');
       }
@@ -54,7 +51,7 @@ const Login = () => {
       toast.error('Server error ❌');
       console.error(error);
     } finally {
-      dispatcher(handleLoading());
+      // dispatcher(handleLoading());
     }
   };
 

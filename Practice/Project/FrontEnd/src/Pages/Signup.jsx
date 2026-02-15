@@ -34,7 +34,7 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     try {
-      dispatcher(handleLoading());
+      //dispatcher(handleLoading());
       const URL = 'http://localhost:3000'; // for Vite
 
       const res = await fetch(`${URL}/signUp`, {
@@ -56,7 +56,7 @@ const Signup = () => {
       toast.error('Server error ❌');
       console.error(error);
     } finally {
-      dispatcher();
+      // dispatcher();
     }
   };
 

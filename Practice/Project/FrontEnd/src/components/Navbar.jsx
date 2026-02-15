@@ -1,51 +1,50 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { handleLoading } from '../Redux/action';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { logoutUser } from '../Store/Feature/Authentication';
+import { toast } from 'react-toastify';
+
 const Navbar = () => {
-  const dispatcher = useDispatch();
-  const isAuthenticated = useSelector((state) => state.auth);
-  async function handelLogout() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const authInfo = useSelector((state) => state.auth);
+
+  const handleLogout = async () => {
     try {
-      dispatcher(handleLoading());
       const URL = 'http://localhost:3000';
       const res = await fetch(`${URL}/logOut`, {
         method: 'GET',
         credentials: 'include',
       });
+
       if (res.ok) {
+        dispatch(logoutUser());
         toast.success('Logout successfully 🎉');
         navigate('/login');
-        dispatcher(handleAuthentication(false));
+      } else {
+        toast.error('Logout failed ❌');
       }
     } catch (error) {
       toast.error('Server error ❌');
       console.error(error);
-    } finally {
-      dispatcher(handleLoading());
     }
-  }
+  };
+
   return (
     <nav className="bg-indigo-600 text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          {/* Logo / Brand */}
-          <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold">
-              MyBlog
-            </Link>
-          </div>
+          {/* Logo */}
+          <Link to="/" className="text-2xl font-bold">
+            MyBlog
+          </Link>
 
-          {/* Navigation Links */}
+          {/* Navigation */}
           <div className="flex space-x-4">
-            {/* Placeholder Links - logic for login/logout will go here */}
-            {isAuthenticated ? (
+            {authInfo.isAuthenticated ? (
               <button
+                onClick={handleLogout}
                 className="px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-500"
-                onClick={() => {
-                  // Add logout logic here
-                }}
               >
                 Logout
               </button>

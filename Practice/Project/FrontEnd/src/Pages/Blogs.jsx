@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { handleLoading } from '../Redux/action';
+// import { handleLoading } from '../Redux/action';
 
 const Blogs = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Blogs = () => {
 
     async function getData() {
       try {
-        dispatcher(handleLoading());
+        // dispatcher(handleLoading());
         const res = await fetch(`${URL}/allBlogs`, {
           method: 'GET',
           credentials: 'include',
@@ -30,7 +30,7 @@ const Blogs = () => {
         console.error(error);
         navigate('/404');
       } finally {
-        dispatcher(handleLoading());
+        // dispatcher(handleLoading());
       }
     }
 

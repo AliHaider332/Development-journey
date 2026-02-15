@@ -5,10 +5,11 @@ import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { storeModle } from './Redux/store.js';
+import mainStore from './Store/storeSetup.js';
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <StrictMode>
-      <Provider store={storeModle}>
+      <Provider store={mainStore}>
         <App />
       </Provider>
     </StrictMode>

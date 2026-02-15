@@ -2309,6 +2309,102 @@ const REACT_TOPICS = [
       },
     ],
   },
+  {
+    title: 'React Redux Toolkit (RTK) – State Management',
+    link: 'https://www.notion.so/React-Redux-Toolkit-Cheat-Sheet-3061f5a14d7080858ad0d1fbdbb26e75', // Add your link here
+    questions: [
+      {
+        question: 'What is Redux Toolkit?',
+        answer:
+          'Redux Toolkit (RTK) is the official, recommended library for writing Redux logic with less boilerplate, built-in best practices, and simpler syntax.',
+      },
+      {
+        question: 'Why use Redux Toolkit over plain Redux?',
+        answer:
+          'Redux Toolkit reduces boilerplate, provides createSlice, createAsyncThunk, configureStore, and handles immutable state updates automatically with Immer.',
+      },
+      {
+        question: 'What is createSlice?',
+        answer:
+          'createSlice is a function that generates reducers and actions together in a single file for a specific feature.',
+      },
+      {
+        question: 'What is configureStore?',
+        answer:
+          'configureStore replaces createStore and sets up the Redux store with good defaults, including Redux Thunk and DevTools.',
+      },
+      {
+        question: 'What are reducers in Redux Toolkit?',
+        answer:
+          'Reducers are functions that take the current state and an action, then return a new state. In RTK, reducers can safely mutate state using Immer.',
+      },
+      {
+        question: 'What is an action in Redux Toolkit?',
+        answer:
+          'An action is an object describing what happened. In RTK, createSlice automatically generates action creators for each reducer.',
+      },
+      {
+        question: 'What is createAsyncThunk?',
+        answer:
+          'createAsyncThunk is used to handle asynchronous logic (like API calls) and automatically generates pending, fulfilled, and rejected action types.',
+      },
+      {
+        question: 'What is extraReducers?',
+        answer:
+          'extraReducers is used in a slice to handle actions generated outside of the slice, typically for handling async thunks.',
+      },
+      {
+        question: 'What is the state design best practice in Redux Toolkit?',
+        answer:
+          'Each slice should manage its own state, loading, and error fields. Avoid giant single slices and always keep reducers pure and synchronous.',
+      },
+      {
+        question: 'What are useSelector and useDispatch hooks?',
+        answer:
+          'useSelector reads data from the Redux store, while useDispatch sends actions from React components.',
+      },
+      {
+        question: 'What is the recommended way to handle async operations?',
+        answer:
+          'Use createAsyncThunk inside a slice and handle its pending, fulfilled, and rejected states with extraReducers.',
+      },
+      {
+        question: 'How do you handle protected routes with Redux Toolkit?',
+        answer:
+          'Use useSelector to check authentication state in a ProtectedRoute component and conditionally render or redirect.',
+      },
+      {
+        question: 'What is the typical Redux Toolkit data flow?',
+        answer:
+          'Component dispatches action → Reducer or Thunk processes action → Store updates state → Component re-renders with new state.',
+      },
+      {
+        question: 'What is the difference between status and loading in RTK?',
+        answer:
+          'Loading is usually a boolean, while status can have multiple values like idle, loading, success, or error for more precise async handling.',
+      },
+      {
+        question: 'What is immutability in Redux Toolkit?',
+        answer:
+          'Redux Toolkit uses Immer to allow “mutating” syntax in reducers while keeping the state immutable behind the scenes.',
+      },
+      {
+        question: 'Can you mix multiple slices in one store?',
+        answer:
+          'Yes, configureStore allows combining multiple slices under a single root reducer.',
+      },
+      {
+        question: 'How do you persist Redux state on refresh?',
+        answer:
+          'You can use libraries like redux-persist to save slices of the state to localStorage or sessionStorage and rehydrate on app load.',
+      },
+      {
+        question: 'What problem does Redux Toolkit solve?',
+        answer:
+          'It simplifies Redux setup, reduces boilerplate, enforces best practices, and makes managing shared/global state easier and predictable.',
+      },
+    ],
+  },
 ];
 
 // Combine all data

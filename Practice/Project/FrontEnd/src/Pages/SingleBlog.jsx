@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { handleLoading } from '../Redux/action';
+// import { handleLoading } from '../Redux/action';
 const SingleBlog = () => {
   const dispatcher = useDispatch();
   const { id } = useParams();
@@ -13,7 +13,7 @@ const SingleBlog = () => {
     const URL = 'http://localhost:3000';
 
     async function getData() {
-      dispatcher(handleLoading());
+      // dispatcher(handleLoading());
       try {
         const res = await fetch(`${URL}/singleBlog/${id}`, {
           method: 'GET',
@@ -31,7 +31,7 @@ const SingleBlog = () => {
         console.error(error);
         navigate('/404');
       } finally {
-        dispatcher(handleLoading());
+        // dispatcher(handleLoading());
       }
     }
 
